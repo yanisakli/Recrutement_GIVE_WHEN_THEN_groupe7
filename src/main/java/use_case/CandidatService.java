@@ -1,5 +1,5 @@
 package main.java.use_case;
 
 public interface CandidatService {
-    Candidat getCandidatByUuid(String candidatUuid);
+    static Candidat getCandidatByUuid(String candidatUuid);
 }
