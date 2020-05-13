@@ -1,5 +1,7 @@
 # Recrutement_GIVE_WHEN_THEN_groupe7
 
-- **Given** un candidat à entretenir avec ses disponibilités
-- **When** je cherche une salle et un recruteur aux compétences supérieures au candidat disponible à cette date
-- **Then** le système me propose les salles et les recruteurs disponibles à cette date
+- **Given** Un candidat Java qui est disponible demain
+    - **And** Un référentiel de consultant recruteur avec des disponibilités et compétences
+    - **And** Un référentiel des salles avec des disponibilités
+- **When** Je planifie un entretien pour le candidat pour demain
+- **Then** un entretien est planifie pour le candidat avec un recruteur demain
