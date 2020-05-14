@@ -1,4 +1,8 @@
-package main.java.use_case;
+package main.java.use_case.interview;
+
+import main.java.use_case.recruiter.Recruiteur;
+import main.java.use_case.room.Room;
+import main.java.use_case.candidat.Candidat;
 
 import java.util.UUID;
 
