@@ -58,7 +58,7 @@ public class InterviewPlanification {
 
         Slot slot = new Slot(date, startInterview, finishInterview);
 
-        return new Interview(candidat, recruiterStream.get(),date.toString(), roomSteam.get(),slot);
+        return new Interview(candidat, recruiterStream.get(), roomSteam.get(),slot);
    }
     
 }

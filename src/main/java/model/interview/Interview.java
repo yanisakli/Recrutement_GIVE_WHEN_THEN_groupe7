@@ -10,19 +10,21 @@ public class Interview {
     private final UUID interviewUuid;
     private Candidat interviewCandidat;
     private Recruiter interviewRecruiter;
-    private String interviewDate;
     private Room interviewRoom;
     private Slot slot;
     private Status status;
     
-    public Interview(Candidat candidat, Recruiter recruiter, String date, Room room, Slot slot) {
+    public Interview(Candidat candidat, Recruiter recruiter, Room room, Slot slot) {
         this.interviewUuid = UUID.randomUUID();
         this.interviewCandidat = candidat;
         this.interviewRecruiter = recruiter;
-        this.interviewDate = date;
         this.interviewRoom = room;
         this.slot = slot;
-        setStatus(Status.POSTPONED);
+        setStatus(Status.PLANIFIED);
+    }
+
+    public UUID getInterviewUuid() {
+        return interviewUuid;
     }
 
     public Candidat getInterviewCandidat() {
@@ -39,14 +41,6 @@ public class Interview {
 
     public void setInterviewRecruiter(Recruiter interviewRecruiter) {
         this.interviewRecruiter = interviewRecruiter;
-    }
-
-    public String getInterviewDate() {
-        return interviewDate;
-    }
-
-    public void setInterviewDate(String interviewDate) {
-        this.interviewDate = interviewDate;
     }
 
     public Room getInterviewRoom() {

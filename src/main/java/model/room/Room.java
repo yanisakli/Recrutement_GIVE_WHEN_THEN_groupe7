@@ -1,11 +1,13 @@
 package model.room;
 
+import java.time.LocalDate;
+
 public class Room {
     private final String name;
     private final Boolean available;
-    private final String date;
+    private final LocalDate date;
 
-    public Room(String name, Boolean available, String date) {
+    public Room(String name, Boolean available, LocalDate date) {
         this.name = name;
         this.available = available;
         this.date = date;
@@ -19,7 +21,7 @@ public class Room {
         return this.name;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return this.date;
     }
 }

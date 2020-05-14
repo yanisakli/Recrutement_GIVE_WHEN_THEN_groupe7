@@ -1,7 +1,7 @@
 package model.interview;
 
 public enum Status {
-    PL,
+    PLANIFIED,
     CONFIRMED,
     CANCELED,
     POSTPONED
