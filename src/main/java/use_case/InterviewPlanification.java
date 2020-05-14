@@ -35,22 +35,22 @@ public class InterviewPlanification {
 
         List<Recruiteur> listRecruiter = Recruiters.getRecruitersByDate(request.getDate());
         Optional<Recruiteur> recruiterStream = listRecruiter.stream()
-            .filter(cr -> cr.haveSkills(candidat.getSkills()))
+            .filter(recruiteur -> recruiteur.haveSkills(candidat.getSkills()))
             .findFirst();
 
-        if(recruiterStream.isPresent()){
+        if(!recruiterStream.isPresent()){
             // no available Recruiter
         }
         List<Room> listRoom = Rooms.getAvailableRoom(request.getDate());
-        Optional<Room> rootSteam = listRoom.stream()
+        Optional<Room> roomSteam = listRoom.stream()
                 .findFirst();
-        if(rootSteam.isPresent()){
+        if(!roomSteam.isPresent()){
             // no available Room
         }
 
         LocalDateTime date = LocalDateTime.parse(request.getDate());
 
-        return new Interview(candidat, recruiterStream.get(),date.toString(), rootSteam.get());
+        return new Interview(candidat, recruiterStream.get(),date.toString(), roomSteam.get());
    }
     
 }
