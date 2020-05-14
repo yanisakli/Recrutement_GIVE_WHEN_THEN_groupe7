@@ -30,7 +30,7 @@ public class InterviewPlanificationTest {
         Interview interview = planificationEntretien.createInterview(interviewRequest);
 
         Assert.assertNotNull(interview.getInterviewUuid());
-        Assert.assertEquals(LocalDate.of(2020, 05, 30),interview.getInterviewRoom().getDate());
+        Assert.assertEquals(LocalDate.of(2020, 05, 30),interview.getSlot().getDate());
         Assert.assertEquals("B01",interview.getInterviewRoom().getName());
         Assert.assertEquals(LocalTime.of(17,30),interview.getSlot().getInterviewStart());
         Assert.assertEquals(LocalTime.of(18,30),interview.getSlot().getInterviewFinish());

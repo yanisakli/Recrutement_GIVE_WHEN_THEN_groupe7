@@ -4,24 +4,19 @@ import java.time.LocalDate;
 
 public class Room {
     private final String name;
-    private final Boolean available;
-    private final LocalDate date;
+    private final Boolean disponibility;
 
-    public Room(String name, Boolean available, LocalDate date) {
+    public Room(String name, Boolean disponibility) {
         this.name = name;
-        this.available = available;
-        this.date = date;
+        this.disponibility = disponibility;
     }
 
     public Boolean getDisponibility() {
-        return this.available;
+        return this.disponibility;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public LocalDate getDate() {
-        return this.date;
-    }
 }

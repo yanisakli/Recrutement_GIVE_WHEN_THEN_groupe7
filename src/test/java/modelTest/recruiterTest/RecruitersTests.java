@@ -1,4 +1,4 @@
-package modelTest;
+package modelTest.recruiterTest;
 
 import model.recruiter.Recruiter;
 import model.recruiter.Recruiters;

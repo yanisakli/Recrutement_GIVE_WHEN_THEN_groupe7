@@ -6,8 +6,10 @@ import model.interview.InterviewRequest;
 import model.interview.Slot;
 import model.recruiter.Recruiter;
 import model.recruiter.Recruiters;
+import model.recruiter.exception.RecruiterException;
 import model.room.Room;
 import model.room.Rooms;
+import model.room.exception.RoomException;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -31,7 +33,7 @@ public class InterviewPlanification {
     // WHEN : Je planifie un entretien pour le candidat pour demain
     // THEN : Un entretien est planifie pour le candidat avec un recruteur demain
 
-    public Interview createInterview(InterviewRequest request){
+    public Interview createInterview(InterviewRequest request) throws RecruiterException, RoomException {
         Candidat candidat = candidats.getCandidatByUuid(request.getCandidatUuid());
 
         List<Recruiter> listRecruiter = recruiters.getRecruitersByDate(request.getDate());
@@ -40,15 +42,15 @@ public class InterviewPlanification {
             .findFirst();
 
         if(!recruiterStream.isPresent()){
-            // no available Recruiter
-            // Lever une runtimeException
+            throw new RecruiterException("No recruiter is available");
         }
+
         List<Room> listRoom = rooms.getAvailableRoom(request.getDate());
         Optional<Room> roomSteam = listRoom.stream()
                 .findFirst();
+
         if(!roomSteam.isPresent()){
-            // no available Room
-            // Lever une runtimeException
+            throw new RoomException("No room is available");
         }
 
         // Mettre dans créneaux

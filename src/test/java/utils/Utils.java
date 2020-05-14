@@ -64,13 +64,13 @@ public class Utils {
     }
 
     public static Room createRoomB01(){
-        return new Room("B01",true,date1);
+        return new Room("B01",true);
     }
     public static Room createRoomB21(){
-        return new Room("B21",true,date1);
+        return new Room("B21",true);
     }
     public static Room createRoomB22(){
-        return new Room("B22",true,date1);
+        return new Room("B22",true);
     }
 
     public static Slot createSlot(){

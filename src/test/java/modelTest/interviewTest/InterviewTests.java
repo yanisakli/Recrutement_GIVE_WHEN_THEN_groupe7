@@ -17,7 +17,7 @@ public class InterviewTests {
     public void it_should_create_interview(){
        Interview interview = Utils.createInterview();
        Assert.assertNotNull(interview.getInterviewUuid());
-       Assert.assertEquals(LocalDate.of(2020, 06, 01),interview.getInterviewRoom().getDate());
+       Assert.assertEquals(LocalDate.of(2020, 06, 01),interview.getSlot().getDate());
        Assert.assertEquals("B01",interview.getInterviewRoom().getName());
        Assert.assertEquals(LocalTime.of(17,30),interview.getSlot().getInterviewStart());
        Assert.assertEquals(LocalTime.of(18,30),interview.getSlot().getInterviewFinish());
@@ -55,10 +55,10 @@ public class InterviewTests {
         LocalTime interviewFinish = LocalTime.of(16,00);
         Slot slot = new Slot(date,interviewStart,interviewFinish);
 
-        Room room = new Room("B22",true,date);
+        Room room = new Room("B22",true);
         interview.postPonedInterview(slot,room);
 
-        Assert.assertEquals(date,interview.getInterviewRoom().getDate());
+        Assert.assertEquals(date,interview.getSlot().getDate());
         Assert.assertEquals("B22",interview.getInterviewRoom().getName());
         Assert.assertEquals(interviewStart,interview.getSlot().getInterviewStart());
         Assert.assertEquals(interviewFinish,interview.getSlot().getInterviewFinish());
