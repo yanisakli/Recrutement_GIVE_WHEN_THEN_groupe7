@@ -43,14 +43,17 @@ public class InterviewPlanification {
 
         if(!recruiterStream.isPresent()){
             // no available Recruiter
+            // Lever une runtimeException
         }
         List<Room> listRoom = rooms.getAvailableRoom(request.getDate());
         Optional<Room> roomSteam = listRoom.stream()
                 .findFirst();
         if(!roomSteam.isPresent()){
             // no available Room
+            // Lever une runtimeException
         }
 
+        // Mettre dans créneaux
         LocalDate date = LocalDate.parse(request.getDate());
         LocalTime startInterview = LocalTime.parse(request.getStartInterview());
         LocalTime finishInterview = LocalTime.parse(request.getFinishInterview());

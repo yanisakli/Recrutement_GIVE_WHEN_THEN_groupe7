@@ -1,4 +1,4 @@
-package test.java.ModelTest;
+package modelTest;
 
 public class RecruiterTests {
 }

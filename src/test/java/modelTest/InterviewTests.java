@@ -1,10 +1,12 @@
-package test.java.modelTest;
+package modelTest;
 
-import org.junit.jupiter.api.Test;
-import sun.jvm.hotspot.utilities.Assert;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class InterviewTests {
     @Test
-    public void TestCalculer() throws Exception {
+    public void TestCalculer() {
+        Assert.assertEquals(true,true);
     }
 }

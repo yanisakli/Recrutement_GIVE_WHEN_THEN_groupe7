@@ -23,4 +23,5 @@ public class Recruiter {
         }
         return true;
     }
+    // Créer un objet recruteur qui aura "peutTester(candidat)"
 }
