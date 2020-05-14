@@ -52,9 +52,9 @@ public class InterviewPlanification {
         }
 
         // Mettre dans créneaux
-        LocalDate date = LocalDate.parse(request.getDate());
-        LocalTime startInterview = LocalTime.parse(request.getStartInterview());
-        LocalTime finishInterview = LocalTime.parse(request.getFinishInterview());
+        LocalDate date = request.getDate();
+        LocalTime startInterview = request.getStartInterview();
+        LocalTime finishInterview = request.getFinishInterview();
 
         Slot slot = new Slot(date, startInterview, finishInterview);
 

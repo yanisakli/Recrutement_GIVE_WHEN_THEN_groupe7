@@ -1,15 +1,17 @@
 package model.interview;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.UUID;
 
 public class InterviewRequest{
     private final UUID candidatUuid;
     private final UUID salleUuid;
-    private final String date;
-    private final String startInterview;
-    private final String finishInterview;
+    private final LocalDate date;
+    private final LocalTime startInterview;
+    private final LocalTime finishInterview;
 
-    public InterviewRequest(UUID candidatUuid, UUID salleUuid, String date, String startInterview, String finishInterview ) {
+    public InterviewRequest(UUID candidatUuid, UUID salleUuid, LocalDate date, LocalTime startInterview, LocalTime finishInterview ) {
         this.candidatUuid = candidatUuid;
         this.salleUuid = salleUuid;
         this.date = date;
@@ -25,15 +27,15 @@ public class InterviewRequest{
         return salleUuid;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public String getStartInterview() {
+    public LocalTime getStartInterview() {
         return startInterview;
     }
 
-    public String getFinishInterview() {
+    public LocalTime getFinishInterview() {
         return finishInterview;
     }
 }

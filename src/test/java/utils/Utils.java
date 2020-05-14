@@ -2,6 +2,7 @@ package utils;
 
 import model.Skill;
 import model.candidat.Candidat;
+import model.candidat.Candidats;
 import model.interview.Interview;
 import model.interview.Slot;
 import model.recruiter.Recruiter;
@@ -10,6 +11,7 @@ import model.room.Room;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,13 +23,23 @@ public class Utils {
     public static final LocalTime interviewStart = LocalTime.of(17,30);
     public static final LocalTime interviewFinish = LocalTime.of(18,30);
 
-    public static Recruiter createRecruiter(){
+    public static Recruiter createRecruiterWithJavaAndCrystalSkills(){
         List<Skill> recruiterSkills = new ArrayList<>();
         List<LocalDate> recruiterDisponibilities = new ArrayList<>();
         Skill recruiterSkillsOne = new Skill("java");
         Skill recruiterSkillsTwo = new Skill("crystal");
         recruiterSkills.add(recruiterSkillsOne);
         recruiterSkills.add(recruiterSkillsTwo);
+        recruiterDisponibilities.add(date1);
+        recruiterDisponibilities.add(date2);
+
+        return new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
+    }
+    public static Recruiter createRecruiterWithPythonSkills(){
+        List<Skill> recruiterSkills = new ArrayList<>();
+        List<LocalDate> recruiterDisponibilities = new ArrayList<>();
+        Skill recruiterSkillsOne = new Skill("python");
+        recruiterSkills.add(recruiterSkillsOne);
         recruiterDisponibilities.add(date1);
         recruiterDisponibilities.add(date2);
 
@@ -50,8 +62,15 @@ public class Utils {
 
         return new Candidat(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
     }
-    public static Room createRoom(){
+
+    public static Room createRoomB01(){
         return new Room("B01",true,date1);
+    }
+    public static Room createRoomB21(){
+        return new Room("B21",true,date1);
+    }
+    public static Room createRoomB22(){
+        return new Room("B22",true,date1);
     }
 
     public static Slot createSlot(){
@@ -59,6 +78,6 @@ public class Utils {
     }
 
     public static Interview createInterview(){
-        return new Interview(createCandidatWithJavaAndCrystalSkills(),createRecruiter(),createRoom(),createSlot());
+        return new Interview(createCandidatWithJavaAndCrystalSkills(),createRecruiterWithJavaAndCrystalSkills(),createRoomB01(),createSlot());
     }
 }

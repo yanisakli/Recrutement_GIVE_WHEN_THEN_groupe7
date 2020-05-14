@@ -18,6 +18,7 @@ public class Recruiter {
         this.disponibilities = disponibilities;
     }
 
+    //TODO
     public boolean canTestCandidat(List<Skill> skills){
         return recruiterSkills.containsAll(skills);
     }
@@ -25,6 +26,4 @@ public class Recruiter {
     public boolean isAvailable(LocalDate date){
         return disponibilities.contains(date);
     }
-
-    // Créer un objet recruteur qui aura "peutTester(candidat)"
 }
