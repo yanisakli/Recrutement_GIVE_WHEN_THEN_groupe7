@@ -10,6 +10,6 @@ public class InterviewConfirmation {
     }
 
     public void confirmInterview(){
-        interview.confirmerInterview();
+        interview.confirmInterview();
     }
 }

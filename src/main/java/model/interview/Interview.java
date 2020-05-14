@@ -22,7 +22,7 @@ public class Interview {
         this.interviewDate = date;
         this.interviewRoom = room;
         this.slot = slot;
-        setStatus(Status.PLANIFIE);
+        setStatus(Status.PLANNED);
     }
 
     public Candidat getInterviewCandidat() {
@@ -73,11 +73,11 @@ public class Interview {
         this.status = status;
     }
 
-    public void confirmerInterview() {
-        this.setStatus(Status.CONFIRME);
+    public void confirmInterview() {
+        this.setStatus(Status.CONFIRMED);
     }
 
-    public void annulerInterview() {
-        this.setStatus(Status.ANNULE);
+    public void cancelInterview() {
+        this.setStatus(Status.CANCELED);
     }
 }

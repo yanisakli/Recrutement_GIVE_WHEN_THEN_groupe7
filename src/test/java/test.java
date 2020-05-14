@@ -1,9 +1,7 @@
-package modelTest;
-
 import org.junit.Assert;
 import org.junit.Test;
 
-public class InterviewTests {
+public class test {
     @Test
     public void test(){
         Assert.assertEquals(true,true);
