@@ -1,4 +1,4 @@
-package main.java.model.room;
+package model.room;
 
 public class Room {
     private final String name;

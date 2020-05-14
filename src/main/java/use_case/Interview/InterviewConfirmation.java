@@ -1,6 +1,7 @@
-package main.java.use_case.Interview;
+package use_case.Interview;
 
-import main.java.model.interview.Interview;
+
+import model.interview.Interview;
 
 public class InterviewConfirmation {
     private final Interview interview;

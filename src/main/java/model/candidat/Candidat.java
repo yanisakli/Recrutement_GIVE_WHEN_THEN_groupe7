@@ -1,6 +1,6 @@
-package main.java.model.candidat;
+package model.candidat;
 
-import main.java.model.Skill;
+import model.Skill;
 
 import java.util.List;
 import java.util.UUID;

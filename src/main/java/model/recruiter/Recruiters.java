@@ -1,4 +1,4 @@
-package main.java.model.recruiter;
+package model.recruiter;
 
 import java.util.List;
 

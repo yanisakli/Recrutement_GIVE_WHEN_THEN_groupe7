@@ -1,8 +1,8 @@
-package main.java.model.interview;
+package model.interview;
 
-import main.java.model.recruiter.Recruiter;
-import main.java.model.room.Room;
-import main.java.model.candidat.Candidat;
+import model.candidat.Candidat;
+import model.recruiter.Recruiter;
+import model.room.Room;
 
 import java.util.UUID;
 
@@ -22,7 +22,7 @@ public class Interview {
         this.interviewDate = date;
         this.interviewRoom = room;
         this.slot = slot;
-        setStatus(Status.PLANNED);
+        setStatus(Status.POSTPONED);
     }
 
     public Candidat getInterviewCandidat() {

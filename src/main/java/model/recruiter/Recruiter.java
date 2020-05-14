@@ -1,6 +1,6 @@
-package main.java.model.recruiter;
+package model.recruiter;
 
-import main.java.model.Skill;
+import model.Skill;
 
 import java.util.List;
 

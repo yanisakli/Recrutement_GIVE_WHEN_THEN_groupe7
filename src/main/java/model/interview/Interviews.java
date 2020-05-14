@@ -1,4 +1,4 @@
-package main.java.model.interview;
+package model.interview;
 
 public interface Interviews {
 }

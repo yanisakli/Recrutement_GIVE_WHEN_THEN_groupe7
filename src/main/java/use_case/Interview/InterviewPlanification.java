@@ -1,14 +1,13 @@
-package main.java.use_case.Interview;
-
-import main.java.model.interview.Slot;
-import main.java.model.recruiter.Recruiter;
-import main.java.model.candidat.Candidat;
-import main.java.model.interview.Interview;
-import main.java.model.interview.InterviewRequest;
-import main.java.model.candidat.Candidats;
-import main.java.model.recruiter.Recruiters;
-import main.java.model.room.Rooms;
-import main.java.model.room.Room;
+package use_case.Interview;
+import model.candidat.Candidat;
+import model.candidat.Candidats;
+import model.interview.Interview;
+import model.interview.InterviewRequest;
+import model.interview.Slot;
+import model.recruiter.Recruiter;
+import model.recruiter.Recruiters;
+import model.room.Room;
+import model.room.Rooms;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

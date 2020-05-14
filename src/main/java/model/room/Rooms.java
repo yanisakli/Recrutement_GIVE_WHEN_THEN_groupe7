@@ -1,4 +1,4 @@
-package main.java.model.room;
+package model.room;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package main.java.model.candidat;
+package model.candidat;
 
 import java.util.UUID;
 

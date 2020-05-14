@@ -1,4 +1,4 @@
-package main.java.model.interview;
+package model.interview;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
