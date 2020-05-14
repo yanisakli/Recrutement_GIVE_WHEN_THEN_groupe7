@@ -1,4 +1,4 @@
-package main.java.infrastructure;
+package main.java.model.candidat;
 
 import main.java.model.Skill;
 import main.java.model.candidat.Candidat;

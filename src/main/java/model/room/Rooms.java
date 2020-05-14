@@ -1,4 +1,4 @@
-package main.java.infrastructure;
+package main.java.model.room;
 
 import main.java.model.room.Room;
 

@@ -4,9 +4,9 @@ import main.java.model.recruiter.Recruiteur;
 import main.java.model.candidat.Candidat;
 import main.java.model.interview.Interview;
 import main.java.model.interview.InterviewRequest;
-import main.java.infrastructure.Candidats;
-import main.java.infrastructure.Recruiters;
-import main.java.infrastructure.Rooms;
+import main.java.model.candidat.Candidats;
+import main.java.model.recruiter.Recruiters;
+import main.java.model.room.Rooms;
 import main.java.model.room.Room;
 
 import java.time.LocalDateTime;
