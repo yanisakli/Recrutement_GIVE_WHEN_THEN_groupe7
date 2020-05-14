@@ -17,12 +17,14 @@ public class Recruiter {
         this.recruiterSkills = recruiterSkills;
         this.disponibilities = disponibilities;
     }
-    public boolean haveSkills(List<Skill> skills){
-        if(!recruiterSkills.containsAll(skills)) return false;
-        for (Skill skill: skills ) {
-            if(!recruiterSkills.get(recruiterSkills.indexOf(skill)).compareQualification(skill))return false;
-        }
-        return true;
+
+    public boolean canTestCandidat(List<Skill> skills){
+        return recruiterSkills.containsAll(skills);
     }
+
+    public boolean isAvailable(LocalDate date){
+        return disponibilities.contains(date);
+    }
+
     // Créer un objet recruteur qui aura "peutTester(candidat)"
 }

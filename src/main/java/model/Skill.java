@@ -10,8 +10,4 @@ public class Skill{
         return this.name;
     }
 
-    public boolean compareQualification(Skill skill){
-        if(this.getName() != skill.getName())return false;
-        return false;
-    }
 }

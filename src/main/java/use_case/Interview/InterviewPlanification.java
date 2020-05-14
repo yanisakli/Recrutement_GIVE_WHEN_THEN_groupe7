@@ -36,7 +36,7 @@ public class InterviewPlanification {
 
         List<Recruiter> listRecruiter = recruiters.getRecruitersByDate(request.getDate());
         Optional<Recruiter> recruiterStream = listRecruiter.stream()
-            .filter(recruiter -> recruiter.haveSkills(candidat.getSkills()))
+            .filter(recruiter -> recruiter.canTestCandidat(candidat.getSkills()))
             .findFirst();
 
         if(!recruiterStream.isPresent()){

@@ -15,11 +15,11 @@ import java.util.UUID;
 
 public class Utils {
 
-    private static final LocalDate date1 = LocalDate.of(2020, 05, 30);
-    private static final LocalDate date2 =  LocalDate.of(2020, 05, 29);
-    private static final LocalDate date3 = LocalDate.of(2020, 05, 28);
-    private static final LocalTime interviewStart = LocalTime.of(17,30);
-    private static final LocalTime interviewFinish = LocalTime.of(18,30);
+    public static final LocalDate date1 = LocalDate.of(2020, 05, 30);
+    public static final LocalDate date2 =  LocalDate.of(2020, 05, 29);
+    public static final LocalDate date3 = LocalDate.of(2020, 05, 28);
+    public static final LocalTime interviewStart = LocalTime.of(17,30);
+    public static final LocalTime interviewFinish = LocalTime.of(18,30);
 
     public static Recruiter createRecruiter(){
         List<Skill> recruiterSkills = new ArrayList<>();
@@ -30,14 +30,22 @@ public class Utils {
         recruiterSkills.add(recruiterSkillsTwo);
         recruiterDisponibilities.add(date1);
         recruiterDisponibilities.add(date2);
-        recruiterDisponibilities.add(date3);
 
         return new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
     }
 
-    public static Candidat createCandidat(){
+    public static Candidat createCandidatWithJavaAndCrystalSkills(){
         List<Skill> skillsCandidat = new ArrayList<>();
         Skill skillsCandidatOne = new Skill("java");
+        Skill skillsCandidatTwo = new Skill("crystal");
+        skillsCandidat.add(skillsCandidatOne);
+        skillsCandidat.add(skillsCandidatTwo);
+
+        return new Candidat(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
+    }
+    public static Candidat createCandidatWithPythonSkills(){
+        List<Skill> skillsCandidat = new ArrayList<>();
+        Skill skillsCandidatOne = new Skill("python");
         skillsCandidat.add(skillsCandidatOne);
 
         return new Candidat(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
@@ -51,6 +59,6 @@ public class Utils {
     }
 
     public static Interview createInterview(){
-        return new Interview(createCandidat(),createRecruiter(),createRoom(),createSlot());
+        return new Interview(createCandidatWithJavaAndCrystalSkills(),createRecruiter(),createRoom(),createSlot());
     }
 }
