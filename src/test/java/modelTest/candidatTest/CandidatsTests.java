@@ -1,4 +1,4 @@
-package modelTest;
+package modelTest.candidatTest;
 
 import model.candidat.Candidat;
 import model.candidat.Candidats;

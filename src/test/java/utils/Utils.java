@@ -17,7 +17,7 @@ import java.util.UUID;
 
 public class Utils {
 
-    public static final LocalDate date1 = LocalDate.of(2020, 05, 30);
+    public static final LocalDate date1 = LocalDate.of(2020, 06, 01);
     public static final LocalDate date2 =  LocalDate.of(2020, 05, 29);
     public static final LocalDate date3 = LocalDate.of(2020, 05, 28);
     public static final LocalTime interviewStart = LocalTime.of(17,30);

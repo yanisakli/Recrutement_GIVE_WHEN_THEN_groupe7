@@ -1,4 +1,4 @@
-package modelTest;
+package modelTest.recruiterTest;
 
 import model.Skill;
 import model.candidat.Candidat;

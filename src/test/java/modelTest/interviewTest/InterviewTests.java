@@ -1,4 +1,4 @@
-package modelTest;
+package modelTest.interviewTest;
 
 import model.interview.Interview;
 import model.interview.Slot;
@@ -17,7 +17,7 @@ public class InterviewTests {
     public void it_should_create_interview(){
        Interview interview = Utils.createInterview();
        Assert.assertNotNull(interview.getInterviewUuid());
-       Assert.assertEquals(LocalDate.of(2020, 05, 30),interview.getInterviewRoom().getDate());
+       Assert.assertEquals(LocalDate.of(2020, 06, 01),interview.getInterviewRoom().getDate());
        Assert.assertEquals("B01",interview.getInterviewRoom().getName());
        Assert.assertEquals(LocalTime.of(17,30),interview.getSlot().getInterviewStart());
        Assert.assertEquals(LocalTime.of(18,30),interview.getSlot().getInterviewFinish());
