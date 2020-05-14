@@ -10,8 +10,6 @@ public class Candidat {
     private final String name;
     private final List<Skill> skills;
 
-
-
     public Candidat(UUID candidatUuid, String name, List<Skill> skills ) {
         this.candidatUuid = candidatUuid;
         this.name = name;

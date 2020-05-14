@@ -1,4 +1,4 @@
-package main.java.use_case;
+package main.java.use_case.Interview;
 
 import main.java.model.interview.Interview;
 
@@ -10,6 +10,6 @@ public class InterviewAnnulation {
     }
 
     public void cancelInterview(){
-        interview.cancelInterview();
+        interview.annulerInterview();
     }
 }

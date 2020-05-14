@@ -1,4 +1,4 @@
-package main.java.use_case;
+package main.java.use_case.Interview;
 
 import main.java.model.interview.Slot;
 import main.java.model.recruiter.Recruiter;
