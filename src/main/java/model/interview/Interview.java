@@ -72,4 +72,12 @@ public class Interview {
     public void setStatus(Status status) {
         this.status = status;
     }
+    
+    public void confirmerInterview() {
+        this.setStatus(Status.CONFIRME);
+    }
+
+    public void annulerInterview() {
+        this.setStatus(Status.ANNULE);
+    }
 }
