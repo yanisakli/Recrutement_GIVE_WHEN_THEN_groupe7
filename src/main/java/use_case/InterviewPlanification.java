@@ -1,5 +1,6 @@
 package main.java.use_case;
 
+import main.java.model.interview.Slot;
 import main.java.model.recruiter.Recruiter;
 import main.java.model.candidat.Candidat;
 import main.java.model.interview.Interview;
@@ -9,7 +10,9 @@ import main.java.model.recruiter.Recruiters;
 import main.java.model.room.Rooms;
 import main.java.model.room.Room;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,9 +51,13 @@ public class InterviewPlanification {
             // no available Room
         }
 
-        LocalDateTime date = LocalDateTime.parse(request.getDate());
+        LocalDate date = LocalDate.parse(request.getDate());
+        LocalTime startInterview = LocalTime.parse(request.getStartInterview());
+        LocalTime finishInterview = LocalTime.parse(request.getFinishInterview());
 
-        return new Interview(candidat, recruiterStream.get(),date.toString(), roomSteam.get());
+        Slot slot = new Slot(date, startInterview, finishInterview);
+
+        return new Interview(candidat, recruiterStream.get(),date.toString(), roomSteam.get(),slot);
    }
     
 }

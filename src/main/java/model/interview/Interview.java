@@ -22,7 +22,7 @@ public class Interview {
         this.interviewDate = date;
         this.interviewRoom = room;
         this.slot = slot;
-        setStatus(Status.CONFIRME);
+        setStatus(Status.PLANIFIE);
     }
 
     public Candidat getInterviewCandidat() {
