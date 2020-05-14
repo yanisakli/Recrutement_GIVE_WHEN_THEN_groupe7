@@ -1,6 +1,6 @@
-package main.java.use_case.repositories;
+package main.java.infrastructure;
 
-import main.java.use_case.room.Room;
+import main.java.model.room.Room;
 
 import java.util.ArrayList;
 import java.util.List;

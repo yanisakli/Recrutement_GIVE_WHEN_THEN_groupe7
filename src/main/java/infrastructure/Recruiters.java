@@ -1,7 +1,7 @@
-package main.java.use_case.repositories;
+package main.java.infrastructure;
 
-import main.java.use_case.Skill;
-import main.java.use_case.recruiter.Recruiteur;
+import main.java.model.Skill;
+import main.java.model.recruiter.Recruiteur;
 import java.util.ArrayList;
 import java.util.List;
 

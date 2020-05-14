@@ -1,8 +1,8 @@
-package main.java.use_case.interview;
+package main.java.model.interview;
 
-import main.java.use_case.recruiter.Recruiteur;
-import main.java.use_case.room.Room;
-import main.java.use_case.candidat.Candidat;
+import main.java.model.recruiter.Recruiteur;
+import main.java.model.room.Room;
+import main.java.model.candidat.Candidat;
 
 import java.util.UUID;
 

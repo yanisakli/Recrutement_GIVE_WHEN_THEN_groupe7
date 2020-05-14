@@ -1,4 +1,4 @@
-package main.java.use_case.room;
+package main.java.model.room;
 
 public class Room {
     private final String name;

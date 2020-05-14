@@ -1,4 +1,4 @@
-package main.java.use_case.interview;
+package main.java.model.interview;
 
 import java.util.UUID;
 

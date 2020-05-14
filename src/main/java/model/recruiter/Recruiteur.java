@@ -1,6 +1,6 @@
-package main.java.use_case.recruiter;
+package main.java.model.recruiter;
 
-import main.java.use_case.Skill;
+import main.java.model.Skill;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package main.java.use_case.candidat;
+package main.java.model.candidat;
 
-import main.java.use_case.Skill;
+import main.java.model.Skill;
 
 import java.util.List;
 import java.util.UUID;

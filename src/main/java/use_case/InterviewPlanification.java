@@ -1,13 +1,13 @@
 package main.java.use_case;
 
-import main.java.use_case.recruiter.Recruiteur;
-import main.java.use_case.candidat.Candidat;
-import main.java.use_case.interview.Interview;
-import main.java.use_case.interview.InterviewRequest;
-import main.java.use_case.repositories.Candidats;
-import main.java.use_case.repositories.Recruiters;
-import main.java.use_case.repositories.Rooms;
-import main.java.use_case.room.Room;
+import main.java.model.recruiter.Recruiteur;
+import main.java.model.candidat.Candidat;
+import main.java.model.interview.Interview;
+import main.java.model.interview.InterviewRequest;
+import main.java.infrastructure.Candidats;
+import main.java.infrastructure.Recruiters;
+import main.java.infrastructure.Rooms;
+import main.java.model.room.Room;
 
 import java.time.LocalDateTime;
 import java.util.List;
