@@ -45,6 +45,34 @@ public class Utils {
 
         return new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
     }
+    public static Recruiter createRecruiterWithEmptyName(){
+        List<Skill> recruiterSkills = new ArrayList<>();
+        List<LocalDate> recruiterDisponibilities = new ArrayList<>();
+        Skill recruiterSkillsOne = new Skill("python");
+        recruiterSkills.add(recruiterSkillsOne);
+        recruiterDisponibilities.add(date1);
+        recruiterDisponibilities.add(date2);
+
+        return new Recruiter("","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
+    }
+    public static Recruiter createRecruiterWithEmptyMail(){
+        List<Skill> recruiterSkills = new ArrayList<>();
+        List<LocalDate> recruiterDisponibilities = new ArrayList<>();
+        Skill recruiterSkillsOne = new Skill("python");
+        recruiterSkills.add(recruiterSkillsOne);
+        recruiterDisponibilities.add(date1);
+        recruiterDisponibilities.add(date2);
+
+        return new Recruiter("Yanis","",recruiterSkills,recruiterDisponibilities);
+    }
+    public static Recruiter createRecruiterWithoutSkills(){
+        List<Skill> recruiterSkills = new ArrayList<>();
+        List<LocalDate> recruiterDisponibilities = new ArrayList<>();
+        recruiterDisponibilities.add(date1);
+        recruiterDisponibilities.add(date2);
+
+        return new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
+    }
 
     public static Candidat createCandidatWithJavaAndCrystalSkills(){
         List<Skill> skillsCandidat = new ArrayList<>();

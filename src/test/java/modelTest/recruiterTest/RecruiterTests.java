@@ -1,14 +1,12 @@
 package modelTest.recruiterTest;
 
-import model.Skill;
 import model.candidat.Candidat;
 import model.recruiter.Recruiter;
+import model.recruiter.exception.RecruiterException;
 import org.junit.Assert;
 import org.junit.Test;
 import utils.Utils;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class RecruiterTests {
 
@@ -16,6 +14,21 @@ public class RecruiterTests {
     public void it_should_create_recruiter(){
         Recruiter recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
         Assert.assertNotNull("Recruiter created",recruiter);
+    }
+
+    @Test
+    public void it_should_throw_exception_when_recruiter_havent_name(){
+        Assert.assertThrows(RecruiterException.class,()-> Utils.createRecruiterWithEmptyName());
+    }
+
+    @Test
+    public void it_should_throw_exception_when_recruiter_havent_mail(){
+        Assert.assertThrows(RecruiterException.class,()-> Utils.createRecruiterWithEmptyMail());
+    }
+
+    @Test
+    public void it_should_throw_exception_when_recruiter_havent_skills(){
+        Assert.assertThrows(RecruiterException.class,()-> Utils.createRecruiterWithoutSkills());
     }
 
     @Test
@@ -29,7 +42,7 @@ public class RecruiterTests {
         Assert.assertEquals(false,recruiter.isAvailable(Utils.date3));
     }
 
-    //TODO
+    //TODO : la methode canTestCandidat retourne toujours false :/
     @Test
     public void recruiter_could_be_test_candidat(){
         Recruiter recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
