@@ -20,8 +20,8 @@ import java.util.UUID;
 public class InterviewTests {
 
     LocalDate date1 = LocalDate.of(2020, 05, 30);
-    LocalTime timeStart = LocalTime.of(17,30);
-    LocalTime timeFinish = LocalTime.of(18,30);
+    LocalTime interviewStart = LocalTime.of(17,30);
+    LocalTime interviewFinish = LocalTime.of(18,30);
 
     private Interview createInterview(){
 
@@ -49,7 +49,7 @@ public class InterviewTests {
         Candidat candidat = new Candidat(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
         Recruiter recruiter = new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
         Room room = new Room("B01",true,date1);
-        Slot slot = new Slot(date1,timeStart,timeFinish);
+        Slot slot = new Slot(date1,interviewStart,interviewFinish);
 
         return new Interview(candidat,recruiter,room,slot);
     }
@@ -60,8 +60,9 @@ public class InterviewTests {
         Interview interview = createInterview();
         Assert.assertNotNull(interview.getInterviewUuid());
         Assert.assertEquals(date1,interview.getInterviewRoom().getDate());
-        Assert.assertEquals(timeStart,interview.getSlot().getInterviewStart());
-        Assert.assertEquals(timeFinish,interview.getSlot().getInterviewFinish());
+        Assert.assertEquals("B01",interview.getInterviewRoom().getName());
+        Assert.assertEquals(interviewStart,interview.getSlot().getInterviewStart());
+        Assert.assertEquals(interviewFinish,interview.getSlot().getInterviewFinish());
         Assert.assertEquals(interview.getStatus(), Status.PLANIFIED);
     }
 
@@ -77,5 +78,25 @@ public class InterviewTests {
         Interview interview = createInterview();
         interview.cancelInterview();
         Assert.assertEquals(interview.getStatus(), Status.CANCELED);
+    }
+
+    @Test
+    public void it_should_post_poned_interview(){
+        Interview interview = createInterview();
+
+        LocalDate date = LocalDate.of(2020, 05, 29);
+
+        LocalTime interviewStart = LocalTime.of(15,00);
+        LocalTime interviewFinish = LocalTime.of(16,00);
+        Slot slot = new Slot(date,interviewStart,interviewFinish);
+
+        Room room = new Room("B22",true,date);
+        interview.postPonedInterview(slot,room);
+
+        Assert.assertEquals(date,interview.getInterviewRoom().getDate());
+        Assert.assertEquals("B22",interview.getInterviewRoom().getName());
+        Assert.assertEquals(interviewStart,interview.getSlot().getInterviewStart());
+        Assert.assertEquals(interviewFinish,interview.getSlot().getInterviewFinish());
+        Assert.assertEquals(interview.getStatus(), Status.POSTPONED);
     }
 }

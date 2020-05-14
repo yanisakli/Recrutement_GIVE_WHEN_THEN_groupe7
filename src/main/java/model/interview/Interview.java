@@ -4,6 +4,8 @@ import model.candidat.Candidat;
 import model.recruiter.Recruiter;
 import model.room.Room;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.UUID;
 
 public class Interview {
@@ -73,5 +75,11 @@ public class Interview {
 
     public void cancelInterview() {
         this.setStatus(Status.CANCELED);
+    }
+
+    public void postPonedInterview(Slot slot,Room room) {
+        this.setSlot(slot);
+        this.setInterviewRoom(room);
+        this.setStatus(Status.POSTPONED);
     }
 }
