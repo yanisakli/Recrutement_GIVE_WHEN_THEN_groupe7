@@ -1,6 +1,6 @@
 package main.java.use_case;
 
-import main.java.model.recruiter.Recruiteur;
+import main.java.model.recruiter.Recruiter;
 import main.java.model.candidat.Candidat;
 import main.java.model.interview.Interview;
 import main.java.model.interview.InterviewRequest;
@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.Optional;
 
 public class InterviewPlanification {
-    private Candidat candidat;
-    private Recruiteur recruiteur;
-    private Room room;
+    private final Candidats candidats;
+    private final Recruiters recruiters;
+    private final Rooms rooms;
 
-    public InterviewPlanification(Candidat candidat,Recruiteur recruiteur, Room room){
-        this.candidat = candidat;
-        this.recruiteur = recruiteur;
-        this.room = room;
+    public InterviewPlanification(Candidats candidats,Recruiters recruiters, Rooms rooms){
+        this.candidats = candidats;
+        this.recruiters = recruiters;
+        this.rooms = rooms;
     }
 
     // GIVEN : Un candidat Java qui est disponible demain
@@ -31,17 +31,17 @@ public class InterviewPlanification {
     // THEN : Un entretien est planifie pour le candidat avec un recruteur demain
 
     public Interview createInterview(InterviewRequest request){
-        Candidat candidat = Candidats.getCandidatByUuid(request.getCandidatUuid());
+        Candidat candidat = candidats.getCandidatByUuid(request.getCandidatUuid());
 
-        List<Recruiteur> listRecruiter = Recruiters.getRecruitersByDate(request.getDate());
-        Optional<Recruiteur> recruiterStream = listRecruiter.stream()
-            .filter(recruiteur -> recruiteur.haveSkills(candidat.getSkills()))
+        List<Recruiter> listRecruiter = recruiters.getRecruitersByDate(request.getDate());
+        Optional<Recruiter> recruiterStream = listRecruiter.stream()
+            .filter(recruiter -> recruiter.haveSkills(candidat.getSkills()))
             .findFirst();
 
         if(!recruiterStream.isPresent()){
             // no available Recruiter
         }
-        List<Room> listRoom = Rooms.getAvailableRoom(request.getDate());
+        List<Room> listRoom = rooms.getAvailableRoom(request.getDate());
         Optional<Room> roomSteam = listRoom.stream()
                 .findFirst();
         if(!roomSteam.isPresent()){

@@ -1,17 +1,8 @@
 package main.java.model.candidat;
 
-import main.java.model.Skill;
-import main.java.model.candidat.Candidat;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
-public class Candidats {
+public interface Candidats {
 
-    public static Candidat getCandidatByUuid(UUID candidatUuid){
-        List<Skill> skills = new ArrayList<>();
-        skills.add(new Skill("java"));
-        return new Candidat(candidatUuid, "Yanis",skills);
-    }
+    Candidat getCandidatByUuid(UUID candidatUuid);
 }

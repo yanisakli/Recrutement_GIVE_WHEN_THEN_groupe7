@@ -3,14 +3,27 @@ package main.java.model.interview;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Creneau {
-    private final LocalDate date;
-    private final LocalTime startInterview;
-    private final LocalTime finishInterview;
+public class Slot {
 
-    public Creneau(LocalDate date, LocalTime startInterview, LocalTime finishInterview) {
+    private final LocalDate date;
+    private final LocalTime interviewStart;
+    private final LocalTime interviewFinish;
+
+    public Slot(LocalDate date, LocalTime interviewStart, LocalTime interviewFinish) {
         this.date = date;
-        this.startInterview = startInterview;
-        this.finishInterview = finishInterview;
+        this.interviewStart = interviewStart;
+        this.interviewFinish = interviewFinish;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public LocalTime getInterviewStart() {
+        return interviewStart;
+    }
+
+    public LocalTime getInterviewFinish() {
+        return interviewFinish;
     }
 }

@@ -4,13 +4,13 @@ import main.java.model.Skill;
 
 import java.util.List;
 
-public class Recruiteur {
+public class Recruiter {
     private final String name;
     private final String mail;
     private final List<Skill> recruiterSkills;
     private final List<String> disponibilities;
 
-    public Recruiteur(String name, String mail,List<Skill> recruiterSkills,List<String> disponibilities ) {
+    public Recruiter(String name, String mail, List<Skill> recruiterSkills, List<String> disponibilities ) {
         this.name = name;
         this.mail = mail;
         this.recruiterSkills = recruiterSkills;
