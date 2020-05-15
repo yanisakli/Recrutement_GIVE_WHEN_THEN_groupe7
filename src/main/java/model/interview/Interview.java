@@ -28,12 +28,12 @@ public class Interview {
         this.status = status;
     }
 
-    public Interview DtoToInterview(InterviewDTO interviewDTO) {
-        return new Interview(interviewDTO.getInterviewCandidat(),
-                interviewDTO.getInterviewRecruiter(),
-                interviewDTO.getInterviewRoom(),
-                interviewDTO.getSlot(),
-                interviewDTO.getStatus());
+    public InterviewDTO InterviewToDTO(){
+        return new InterviewDTO(interviewCandidat,
+                interviewRecruiter,
+                interviewRoom,
+                slot,
+                status);
     }
 
     public UUID getInterviewUuid() {

@@ -35,8 +35,8 @@ public class Slot {
         this.interviewFinish = interviewFinish;
     }
 
-    public Slot DtoToSlot(SlotDTO slotDTO){
-        return new Slot(slotDTO.getDate(),slotDTO.getInterviewStart(),slotDTO.getInterviewFinish());
+    public SlotDTO SlotToDTO(){
+        return new SlotDTO(date, interviewStart, interviewFinish);
     }
 
     public LocalDate getDate() {

@@ -1,5 +1,7 @@
 package model.common;
 
+import model.candidat.Candidat;
+
 import java.model.common.SlotDTO;
 import java.util.List;
 import java.util.UUID;
@@ -15,8 +17,8 @@ public class CandidatDTO {
         this.skills = skills;
     }
 
-    public model.candidat.Candidat DtoToCandidat(model.common.CandidatDTO candidatDTO){
-        return new model.candidat.Candidat(candidatDTO.getCandidatUuid(),candidatDTO.getName(),candidatDTO.getSkills());
+    public Candidat DtoToCandidat(){
+        return new Candidat(candidatUuid, name, skills);
     }
 
     public UUID getCandidatUuid() {

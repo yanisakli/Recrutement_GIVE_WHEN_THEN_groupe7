@@ -1,5 +1,7 @@
 package java.model.common;
 
+import model.interview.Slot;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -16,8 +18,8 @@ public class SlotDTO {
         this.interviewFinish = interviewFinish;
     }
 
-    public SlotDTO SlotToDTO(model.interview.Slot slot){
-        return new SlotDTO(slot.getDate(),slot.getInterviewStart(),slot.getInterviewFinish());
+    public Slot DtoToSlot(){
+        return new Slot(date,interviewStart,interviewFinish);
     }
 
     public LocalDate getDate() {

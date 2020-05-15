@@ -1,8 +1,9 @@
-package use_case.Interview;
+package use_case.InterviewTest;
 
 import infrastructure.utils.Utils;
 import model.interview.Interview;
 import model.interview.InterviewRequest;
+import use_case.InterviewTestInterviewTest;
 import model.interview.Status;
 import infrastructure.implementation.CandidatsImplementation;
 import infrastructure.implementation.RecruitersImplementation;

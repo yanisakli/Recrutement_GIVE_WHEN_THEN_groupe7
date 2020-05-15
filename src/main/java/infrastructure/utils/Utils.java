@@ -1,11 +1,9 @@
 package infrastructure.utils;
 
 import model.Skill;
-import model.candidat.Candidat;
 import model.interview.Interview;
 import model.interview.Slot;
-import model.recruiter.Recruiter;
-import model.room.Room;
+import model.interview.Status;
 import model.common.CandidatDTO;
 import model.common.RecruiterDTO;
 
@@ -107,6 +105,7 @@ public class Utils {
     }
 
     public static Interview createInterview(){
-        return new Interview(createCandidatWithJavaAndCrystalSkills(),createRecruiterWithJavaAndCrystalSkills(),createRoomB01(),createSlot());
+        return new Interview(createCandidatWithJavaAndCrystalSkills(),createRecruiterWithJavaAndCrystalSkills(),createRoomB01(),createSlot(), Status.PLANIFIED);
     }
+
 }

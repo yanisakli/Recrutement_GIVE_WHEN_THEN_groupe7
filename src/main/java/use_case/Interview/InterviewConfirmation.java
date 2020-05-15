@@ -1,4 +1,4 @@
-package use_case.Interview;
+package use_case.InterviewTest;
 
 
 import model.interview.Interview;

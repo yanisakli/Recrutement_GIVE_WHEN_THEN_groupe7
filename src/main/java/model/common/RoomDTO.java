@@ -1,5 +1,7 @@
 package java.model.common;
 
+import model.room.Room;
+
 public class RoomDTO {
     private final String name;
     private final Boolean disponibility;
@@ -9,8 +11,9 @@ public class RoomDTO {
         this.disponibility = disponibility;
     }
 
-    public RoomDTO RoomToDTO(model.room.Room room){
-        return new RoomDTO(room.getName(),room.getDisponibility());
+
+    public Room DtoToRoom(){
+        return new Room(name, disponibility);
     }
 
     public Boolean getDisponibility() {

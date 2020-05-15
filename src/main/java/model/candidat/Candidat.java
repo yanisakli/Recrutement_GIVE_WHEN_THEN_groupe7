@@ -1,6 +1,7 @@
 package model.candidat;
 
 import model.Skill;
+import model.common.CandidatDTO;
 
 import java.model.common.SlotDTO;
 import java.util.List;
@@ -17,8 +18,8 @@ public class Candidat {
         this.skills = skills;
     }
 
-    public model.common.CandidatDTO candidatToDTO(model.candidat.Candidat candidat){
-        return new model.common.CandidatDTO(candidat.getCandidatUuid(),candidat.getName(),candidat.getSkills());
+    public CandidatDTO candidatToDTO(){
+        return new CandidatDTO(candidatUuid, name, skills);
     }
     public UUID getCandidatUuid() {
         return candidatUuid;

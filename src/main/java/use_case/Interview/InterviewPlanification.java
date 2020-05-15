@@ -1,4 +1,4 @@
-package use_case.Interview;
+package use_case.InterviewTest;
 
 import model.common.CandidatDTO;
 import model.common.RecruiterDTO;
@@ -42,11 +42,11 @@ public class InterviewPlanification {
 
     public Interview createInterview(InterviewRequest request) throws RecruiterException, RoomException {
         CandidatDTO candidatDTO = candidats.getCandidatByUuid(request.getCandidatUuid());
-        Candidat candidat = candidatDTO.DtoToCandidat(candidatDTO);
+        Candidat candidat = candidatDTO.DtoToCandidat();
 
         List<RecruiterDTO> listRecruiter = recruiters.getRecruitersByDate(request.getDate());
         Optional<Recruiter> recruiterStream = listRecruiter.stream()
-                .map(recruiterDTO -> recruiterDTO.DtoToRecruiter(recruiterDTO))
+                .map(recruiterDTO -> recruiterDTO.DtoToRecruiter())
                 .filter(recruiter -> recruiter.canTestCandidat(candidat.getSkills() ))
                 .findFirst();
 
@@ -69,7 +69,7 @@ public class InterviewPlanification {
 
         Slot slot = new Slot(date, startInterview, finishInterview);
 
-        return new Interview(candidat, recruiterStream.get(), roomSteam.get(),slot, Status.PLANIFIED);
+        return new Interview(candidat, recruiterStream.get(), roomSteam.get().DtoToRoom(),slot, Status.PLANIFIED);
    }
     
 }

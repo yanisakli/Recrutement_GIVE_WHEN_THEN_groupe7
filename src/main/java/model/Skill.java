@@ -13,8 +13,8 @@ public class Skill{
         return this.name;
     }
 
-    public Skill DTOToSkill(SkillDTO skillDTO){
-        return new Skill(skillDTO.getName());
+    public SkillDTO skillToDTO(){
+        return new SkillDTO(name);
     }
 
 }

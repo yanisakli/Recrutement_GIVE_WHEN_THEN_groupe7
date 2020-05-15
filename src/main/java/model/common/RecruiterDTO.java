@@ -1,5 +1,7 @@
 package model.common;
 
+import model.recruiter.Recruiter;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,8 +24,8 @@ public class RecruiterDTO {
         this.disponibilities = disponibilities;
     }
 
-    public model.recruiter.Recruiter DtoToRecruiter(model.common.RecruiterDTO recruiterDTO) {
-        return new model.recruiter.Recruiter(recruiterDTO.getName(), recruiterDTO.getMail(), recruiterDTO.getRecruiterSkills(), recruiterDTO.getDisponibilities());
+    public Recruiter DtoToRecruiter() {
+        return new Recruiter(name, mail, recruiterSkills, disponibilities);
     }
 
     public String getName() {

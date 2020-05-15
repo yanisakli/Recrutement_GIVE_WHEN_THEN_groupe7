@@ -25,9 +25,10 @@ public class Recruiter {
         this.disponibilities = disponibilities;
     }
 
-    public model.common.RecruiterDTO RecruiterToDTO(model.recruiter.Recruiter recruiter) {
-        return new model.common.RecruiterDTO(recruiter.getName(), recruiter.getMail(), recruiter.getRecruiterSkills(), recruiter.getDisponibilities() );
+    public model.common.RecruiterDTO RecruiterToDTO() {
+        return new model.common.RecruiterDTO(name, mail, recruiterSkills, disponibilities);
     }
+
     //TODO : elle retourne toujours false :/
     public boolean canTestCandidat(List<Skill> skills){
         return recruiterSkills.containsAll(skills);

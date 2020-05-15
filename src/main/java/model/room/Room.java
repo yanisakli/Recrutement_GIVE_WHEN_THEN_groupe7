@@ -12,9 +12,10 @@ public class Room {
         this.disponibility = disponibility;
     }
 
-    public Room DtoToRoom(RoomDTO roomDTO){
-        return new Room(roomDTO.getName(),roomDTO.getDisponibility());
+    public RoomDTO RoomToDTO(){
+        return new RoomDTO(name, disponibility);
     }
+
     public Boolean getDisponibility() {
         return this.disponibility;
     }
