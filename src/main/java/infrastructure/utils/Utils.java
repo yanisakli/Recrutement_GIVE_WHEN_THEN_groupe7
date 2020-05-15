@@ -6,6 +6,7 @@ import model.interview.Interview;
 import model.interview.Slot;
 import model.recruiter.Recruiter;
 import model.room.Room;
+import model.common.CandidatDTO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -72,21 +73,21 @@ public class Utils {
         return new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
     }
 
-    public static Candidat createCandidatWithJavaAndCrystalSkills(){
+    public static CandidatDTO createCandidatWithJavaAndCrystalSkills(){
         List<Skill> skillsCandidat = new ArrayList<>();
         Skill skillsCandidatOne = new Skill("java");
         Skill skillsCandidatTwo = new Skill("crystal");
         skillsCandidat.add(skillsCandidatOne);
         skillsCandidat.add(skillsCandidatTwo);
 
-        return new Candidat(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
+        return new CandidatDTO(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
     }
-    public static Candidat createCandidatWithPythonSkills(){
+    public static CandidatDTO createCandidatWithPythonSkills(){
         List<Skill> skillsCandidat = new ArrayList<>();
         Skill skillsCandidatOne = new Skill("python");
         skillsCandidat.add(skillsCandidatOne);
 
-        return new Candidat(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
+        return new CandidatDTO(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
     }
 
     public static Room createRoomB01(){
