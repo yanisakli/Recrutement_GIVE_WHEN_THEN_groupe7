@@ -5,6 +5,7 @@ import model.common.CandidatDTO;
 import model.common.SkillDTO;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,21 @@ public class Candidat {
         this.candidatUuid = candidatUuid;
         this.name = name;
         this.skills = skills.stream().map(skillDTO -> skillDTO.DTOToSkill()).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Candidat candidat = (Candidat) o;
+        return Objects.equals(candidatUuid, candidat.candidatUuid) &&
+                Objects.equals(name, candidat.name) &&
+                Objects.equals(skills, candidat.skills);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(candidatUuid, name, skills);
     }
 
     public CandidatDTO candidatToDTO(){

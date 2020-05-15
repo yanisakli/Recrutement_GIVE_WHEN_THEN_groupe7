@@ -41,10 +41,6 @@ public class InterviewDTO {
         return interviewRecruiter.DtoToRecruiter();
     }
 
-    /*public Room getInterviewRoom() {
-        return interviewRoom;
-    }*/
-
     public Slot getSlot() {
         return slot.DtoToSlot();
     }

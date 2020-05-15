@@ -4,6 +4,7 @@ import model.common.RoomDTO;
 import model.common.SlotDTO;
 import model.interview.Slot;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -39,13 +40,28 @@ public class Room {
         return this.disponibilities;
     }
 
-    // TODO :  Retourne toujours false
-    public Boolean getFreeRoom(Slot slot) {
-        return true;
-        // return this.disponibilities.contains(slot);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        return capacity == room.capacity &&
+                Objects.equals(name, room.name) &&
+                Objects.equals(disponibilities, room.disponibilities) &&
+                Objects.equals(roomUuid, room.roomUuid) &&
+                Objects.equals(equipments, room.equipments);
     }
 
-    // Liberer commands
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, disponibilities, roomUuid, capacity, equipments);
+    }
+
+    public Boolean getFreeRoom(Slot slot) {
+        return this.disponibilities.contains(slot);
+    }
+
+    // TODO : Libérer la salle si l'entretien est reporté ou annulé
 
     public String getName() {
         return this.name;

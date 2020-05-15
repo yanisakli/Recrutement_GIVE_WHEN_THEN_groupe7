@@ -6,6 +6,7 @@ import model.recruiter.Recruiter;
 import model.room.Room;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -25,6 +26,24 @@ public class Interview {
 
     public void planified() {
         setStatus(Status.PLANIFIED);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Interview interview = (Interview) o;
+        return Objects.equals(interviewUuid, interview.interviewUuid) &&
+                Objects.equals(interviewCandidat, interview.interviewCandidat) &&
+                Objects.equals(interviewRecruiter, interview.interviewRecruiter) &&
+                Objects.equals(roomUuid, interview.roomUuid) &&
+                Objects.equals(slot, interview.slot) &&
+                status == interview.status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(interviewUuid, interviewCandidat, interviewRecruiter, roomUuid, slot, status);
     }
 
     public void setRecruiter(List<RecruiterDTO> recruitersDTO) throws model.recruiter.exception.RecruiterException {
@@ -130,7 +149,7 @@ public class Interview {
         this.setStatus(Status.CANCELED);
     }
 
-    // TODO : Rajouter modif room
+    // TODO : Faire le changement de la salle
     public void postPonedInterview(Slot slot) {
         this.setSlot(slot);
         this.setStatus(Status.POSTPONED);
