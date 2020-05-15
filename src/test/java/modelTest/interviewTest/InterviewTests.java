@@ -1,13 +1,12 @@
 package modelTest.interviewTest;
 
+import infrastructure.utils.Utils;
 import model.interview.Interview;
 import model.interview.Slot;
 import model.interview.Status;
 import model.room.Room;
 import org.junit.Assert;
 import org.junit.Test;
-import utils.Utils;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 

@@ -1,5 +1,6 @@
 package use_case.Interview;
 
+import infrastructure.utils.Utils;
 import model.interview.Interview;
 import model.interview.InterviewRequest;
 import model.interview.Status;
@@ -8,7 +9,6 @@ import infrastructure.implementation.RecruitersImplementation;
 import infrastructure.implementation.RoomsImplementation;
 import org.junit.Assert;
 import org.junit.Test;
-import utils.Utils;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

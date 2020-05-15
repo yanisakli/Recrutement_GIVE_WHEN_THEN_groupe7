@@ -1,11 +1,10 @@
 package modelTest.interviewTest;
 
+import infrastructure.utils.Utils;
 import model.interview.Slot;
 import model.interview.exception.SlotException;
 import org.junit.Assert;
 import org.junit.Test;
-import utils.Utils;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 
