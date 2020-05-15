@@ -1,5 +1,8 @@
 package model;
 
+
+import java.model.common.SkillDTO;
+
 public class Skill{
     private final String name;
 
@@ -8,6 +11,10 @@ public class Skill{
     }
     public String getName(){
         return this.name;
+    }
+
+    public Skill DTOToSkill(SkillDTO skillDTO){
+        return new Skill(skillDTO.getName());
     }
 
 }

@@ -4,5 +4,5 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface Recruiters {
-    List<Recruiter> getRecruitersByDate(LocalDate date);
+    List<model.common.RecruiterDTO> getRecruitersByDate(LocalDate date);
 }

@@ -4,5 +4,5 @@ import java.util.UUID;
 
 public interface Candidats {
 
-    Candidat getCandidatByUuid(UUID candidatUuid);
+    model.common.CandidatDTO getCandidatByUuid(UUID candidatUuid);
 }

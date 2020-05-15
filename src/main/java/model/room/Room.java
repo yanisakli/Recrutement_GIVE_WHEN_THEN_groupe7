@@ -1,5 +1,6 @@
 package model.room;
 
+import java.model.common.RoomDTO;
 import java.time.LocalDate;
 
 public class Room {
@@ -11,6 +12,9 @@ public class Room {
         this.disponibility = disponibility;
     }
 
+    public Room DtoToRoom(RoomDTO roomDTO){
+        return new Room(roomDTO.getName(),roomDTO.getDisponibility());
+    }
     public Boolean getDisponibility() {
         return this.disponibility;
     }

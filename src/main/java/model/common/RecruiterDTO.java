@@ -2,12 +2,11 @@ package model.common;
 
 import java.time.LocalDate;
 import java.util.List;
-import model;
 
-public class RecruiterDTO implements Recruiter {
+public class RecruiterDTO {
     private final String name;
     private final String mail;
-    private final List<Skill> recruiterSkills;
+    private final List<model.Skill> recruiterSkills;
     private final List<LocalDate> disponibilities;
 
     public RecruiterDTO(String name, String mail, List<model.Skill> recruiterSkills, List<LocalDate> disponibilities ) {
@@ -23,6 +22,10 @@ public class RecruiterDTO implements Recruiter {
         this.disponibilities = disponibilities;
     }
 
+    public model.recruiter.Recruiter DtoToRecruiter(model.common.RecruiterDTO recruiterDTO) {
+        return new model.recruiter.Recruiter(recruiterDTO.getName(), recruiterDTO.getMail(), recruiterDTO.getRecruiterSkills(), recruiterDTO.getDisponibilities());
+    }
+
     public String getName() {
         return name;
     }
@@ -31,23 +34,7 @@ public class RecruiterDTO implements Recruiter {
         return mail;
     }
 
-    public List<Skill> getRecruiterSkills() {
-        return recruiterSkills;
-    }
-
-    public List<LocalDate> getDisponibilities() {
-        return disponibilities;
-    }
-
-    public String setName(String name) {
-        t
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public List<Skill> getRecruiterSkills() {
+    public List<model.Skill> getRecruiterSkills() {
         return recruiterSkills;
     }
 

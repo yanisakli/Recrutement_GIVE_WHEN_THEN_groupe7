@@ -8,7 +8,7 @@ import model.interview.Interview;
 import model.interview.Slot;
 import model.interview.Status;
 
-public class InterviewDTO implements Interview {
+public class InterviewDTO {
     private final UUID interviewUuid;
     private Candidat interviewCandidat;
     private Recruiter interviewRecruiter;
@@ -23,6 +23,14 @@ public class InterviewDTO implements Interview {
         this.interviewRoom = room;
         this.slot = slot;
         this.status = status;
+    }
+
+    public InterviewDTO InterviewToDTO(Interview interview){
+        return new InterviewDTO(interview.getInterviewCandidat(),
+                interview.getInterviewRecruiter(),
+                interview.getInterviewRoom(),
+                interview.getSlot(),
+                interview.getStatus());
     }
 
     public UUID getInterviewUuid() {

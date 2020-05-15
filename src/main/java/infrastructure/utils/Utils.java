@@ -7,7 +7,9 @@ import model.interview.Slot;
 import model.recruiter.Recruiter;
 import model.room.Room;
 import model.common.CandidatDTO;
+import model.common.RecruiterDTO;
 
+import java.model.common.RoomDTO;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -22,7 +24,7 @@ public class Utils {
     public static final LocalTime interviewStart = LocalTime.of(17,30);
     public static final LocalTime interviewFinish = LocalTime.of(18,30);
 
-    public static Recruiter createRecruiterWithJavaAndCrystalSkills(){
+    public static RecruiterDTO createRecruiterWithJavaAndCrystalSkills(){
         List<Skill> recruiterSkills = new ArrayList<>();
         List<LocalDate> recruiterDisponibilities = new ArrayList<>();
         Skill recruiterSkillsOne = new Skill("java");
@@ -32,9 +34,9 @@ public class Utils {
         recruiterDisponibilities.add(date1);
         recruiterDisponibilities.add(date2);
 
-        return new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
+        return new RecruiterDTO("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
     }
-    public static Recruiter createRecruiterWithPythonSkills(){
+    public static RecruiterDTO createRecruiterWithPythonSkills(){
         List<Skill> recruiterSkills = new ArrayList<>();
         List<LocalDate> recruiterDisponibilities = new ArrayList<>();
         Skill recruiterSkillsOne = new Skill("python");
@@ -42,9 +44,9 @@ public class Utils {
         recruiterDisponibilities.add(date1);
         recruiterDisponibilities.add(date2);
 
-        return new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
+        return new RecruiterDTO("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
     }
-    public static Recruiter createRecruiterWithEmptyName(){
+    public static RecruiterDTO createRecruiterWithEmptyName(){
         List<Skill> recruiterSkills = new ArrayList<>();
         List<LocalDate> recruiterDisponibilities = new ArrayList<>();
         Skill recruiterSkillsOne = new Skill("python");
@@ -52,9 +54,9 @@ public class Utils {
         recruiterDisponibilities.add(date1);
         recruiterDisponibilities.add(date2);
 
-        return new Recruiter("","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
+        return new RecruiterDTO("","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
     }
-    public static Recruiter createRecruiterWithEmptyMail(){
+    public static RecruiterDTO createRecruiterWithEmptyMail(){
         List<Skill> recruiterSkills = new ArrayList<>();
         List<LocalDate> recruiterDisponibilities = new ArrayList<>();
         Skill recruiterSkillsOne = new Skill("python");
@@ -62,15 +64,15 @@ public class Utils {
         recruiterDisponibilities.add(date1);
         recruiterDisponibilities.add(date2);
 
-        return new Recruiter("Yanis","",recruiterSkills,recruiterDisponibilities);
+        return new RecruiterDTO("Yanis","",recruiterSkills,recruiterDisponibilities);
     }
-    public static Recruiter createRecruiterWithoutSkills(){
+    public static RecruiterDTO createRecruiterWithoutSkills(){
         List<Skill> recruiterSkills = new ArrayList<>();
         List<LocalDate> recruiterDisponibilities = new ArrayList<>();
         recruiterDisponibilities.add(date1);
         recruiterDisponibilities.add(date2);
 
-        return new Recruiter("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
+        return new RecruiterDTO("Yanis","yanisakli@yahoo.fr",recruiterSkills,recruiterDisponibilities);
     }
 
     public static CandidatDTO createCandidatWithJavaAndCrystalSkills(){
@@ -90,14 +92,14 @@ public class Utils {
         return new CandidatDTO(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
     }
 
-    public static Room createRoomB01(){
-        return new Room("B01",true);
+    public static RoomDTO createRoomB01(){
+        return new RoomDTO("B01",true);
     }
-    public static Room createRoomB21(){
-        return new Room("B21",true);
+    public static RoomDTO createRoomB21(){
+        return new RoomDTO("B21",true);
     }
-    public static Room createRoomB22(){
-        return new Room("B22",true);
+    public static RoomDTO createRoomB22(){
+        return new RoomDTO("B22",true);
     }
 
     public static Slot createSlot(){

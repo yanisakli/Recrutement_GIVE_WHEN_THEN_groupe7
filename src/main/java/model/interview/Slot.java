@@ -2,6 +2,8 @@ package model.interview;
 
 import model.interview.exception.SlotException;
 
+import java.model.common.RoomDTO;
+import java.model.common.SlotDTO;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -31,6 +33,10 @@ public class Slot {
         this.date = date;
         this.interviewStart = interviewStart;
         this.interviewFinish = interviewFinish;
+    }
+
+    public Slot DtoToSlot(SlotDTO slotDTO){
+        return new Slot(slotDTO.getDate(),slotDTO.getInterviewStart(),slotDTO.getInterviewFinish());
     }
 
     public LocalDate getDate() {

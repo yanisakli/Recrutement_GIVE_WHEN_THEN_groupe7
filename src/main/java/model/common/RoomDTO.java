@@ -9,12 +9,8 @@ public class RoomDTO {
         this.disponibility = disponibility;
     }
 
-    public RoomDTO(Boolean disponibility) {
-        this.disponibility = disponibility;
-    }
-
-    public RoomDTO(String name) {
-        this.name = name;
+    public RoomDTO RoomToDTO(model.room.Room room){
+        return new RoomDTO(room.getName(),room.getDisponibility());
     }
 
     public Boolean getDisponibility() {

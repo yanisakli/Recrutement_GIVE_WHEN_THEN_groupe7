@@ -3,6 +3,9 @@ package model.interview;
 import model.candidat.Candidat;
 import model.recruiter.Recruiter;
 import model.room.Room;
+import model.interview.Slot;
+import model.interview.Status;
+import model.common.InterviewDTO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -16,13 +19,21 @@ public class Interview {
     private Slot slot;
     private Status status;
     
-    public Interview(Candidat candidat, Recruiter recruiter, Room room, Slot slot) {
+    public Interview(Candidat candidat, Recruiter recruiter, Room room, Slot slot, Status status) {
         this.interviewUuid = UUID.randomUUID();
         this.interviewCandidat = candidat;
         this.interviewRecruiter = recruiter;
         this.interviewRoom = room;
         this.slot = slot;
-        setStatus(Status.PLANIFIED);
+        this.status = status;
+    }
+
+    public Interview DtoToInterview(InterviewDTO interviewDTO) {
+        return new Interview(interviewDTO.getInterviewCandidat(),
+                interviewDTO.getInterviewRecruiter(),
+                interviewDTO.getInterviewRoom(),
+                interviewDTO.getSlot(),
+                interviewDTO.getStatus());
     }
 
     public UUID getInterviewUuid() {
