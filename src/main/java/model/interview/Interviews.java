@@ -1,4 +1,4 @@
-package java.model.interview;
+package model.interview;
 
 import java.util.UUID;
 

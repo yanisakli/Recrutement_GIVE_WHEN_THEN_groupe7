@@ -1,8 +1,9 @@
-package java.use_case.Interview;
+package use_case.Interview;
 
-import java.model.common.CandidatDTO;
-import java.model.common.InterviewDTO;
-import java.model.interview.Interview;
+
+import model.common.CandidatDTO;
+import model.common.InterviewDTO;
+import model.interview.Interview;
 
 public class InterviewCancellation {
     private final Interview interview;

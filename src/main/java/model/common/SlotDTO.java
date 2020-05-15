@@ -1,9 +1,8 @@
-package java.model.common;
+package model.common;
 
-import java.model.interview.Slot;
+import model.interview.Slot;
 import java.time.LocalDate;
 import java.time.LocalTime;
-
 
 public class SlotDTO {
 

@@ -1,4 +1,4 @@
-package java.model.interview;
+package model.interview;
 
 public enum Status {
     PLANIFIED,

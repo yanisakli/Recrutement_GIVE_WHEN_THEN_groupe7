@@ -1,7 +1,6 @@
 package model;
 
-
-import java.model.common.SkillDTO;
+import model.common.SkillDTO;
 
 public class Skill{
     private final String name;

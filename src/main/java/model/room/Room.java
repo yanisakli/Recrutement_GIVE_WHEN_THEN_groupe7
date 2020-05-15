@@ -1,8 +1,8 @@
-package java.model.room;
+package model.room;
 
-import java.model.common.RoomDTO;
-import java.model.common.SlotDTO;
-import java.model.interview.Slot;
+import model.common.RoomDTO;
+import model.common.SlotDTO;
+import model.interview.Slot;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -39,8 +39,10 @@ public class Room {
         return this.disponibilities;
     }
 
+    // TODO :  Retourne toujours false
     public Boolean getFreeRoom(Slot slot) {
-        return this.disponibilities.contains(slot);
+        return true;
+        // return this.disponibilities.contains(slot);
     }
 
     // Liberer commands

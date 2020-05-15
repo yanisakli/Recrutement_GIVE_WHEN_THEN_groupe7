@@ -1,8 +1,9 @@
-package java.use_case.Interview;
+package use_case.Interview;
 
 import model.candidat.Candidats;
 import model.common.CandidatDTO;
 import model.common.RecruiterDTO;
+import model.common.RoomDTO;
 import model.interview.Interview;
 import model.interview.InterviewRequest;
 import model.interview.Slot;
@@ -11,7 +12,6 @@ import model.recruiter.exception.RecruiterException;
 import model.room.Rooms;
 import model.room.exception.RoomException;
 
-import java.model.common.RoomDTO;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -36,7 +36,7 @@ public class InterviewPlanification {
     public void createInterview(InterviewRequest request) throws RecruiterException, RoomException {
         CandidatDTO candidatDTO = candidats.getCandidatByUuid(request.getCandidatUuid());
 
-        List<RecruiterDTO> listRecruiterDTO = recruiters.getRecruitersByDate(request.getDate()); // Good
+        List<RecruiterDTO> listRecruiterDTO = recruiters.getRecruitersByDate(request.getDate());
         List<RoomDTO> listRoomDTO = rooms.getAvailableRoom(request.getDate());
 
         // Mettre dans créneaux

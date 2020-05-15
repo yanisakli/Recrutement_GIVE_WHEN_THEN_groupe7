@@ -2,6 +2,8 @@ package modelTest.recruiterTest;
 
 import infrastructure.utils.Utils;
 import model.candidat.Candidat;
+import model.common.CandidatDTO;
+import model.common.RecruiterDTO;
 import model.recruiter.Recruiter;
 import model.recruiter.exception.RecruiterException;
 import org.junit.Assert;
@@ -12,7 +14,7 @@ public class RecruiterTests {
 
     @Test
     public void it_should_create_recruiter(){
-        Recruiter recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
+        RecruiterDTO recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
         Assert.assertNotNull("Recruiter created",recruiter);
     }
 
@@ -33,28 +35,28 @@ public class RecruiterTests {
 
     @Test
     public void recruiter_should_be_available(){
-        Recruiter recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
-        Assert.assertEquals(true,recruiter.isAvailable(Utils.date1));
+        RecruiterDTO recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
+        Assert.assertEquals(true,recruiter.DtoToRecruiter().isAvailable(Utils.date1));
     }
     @Test
     public void recruiter_should_not_be_available(){
-        Recruiter recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
-        Assert.assertEquals(false,recruiter.isAvailable(Utils.date3));
+        RecruiterDTO recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
+        Assert.assertEquals(false,recruiter.DtoToRecruiter().isAvailable(Utils.date3));
     }
 
     //TODO : la methode canTestCandidat retourne toujours false :/
     @Test
     public void recruiter_could_be_test_candidat(){
-        Recruiter recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
-        Candidat candidat = Utils.createCandidatWithJavaAndCrystalSkills();
+        RecruiterDTO recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
+        CandidatDTO candidat = Utils.createCandidatWithJavaAndCrystalSkills();
 
-        Assert.assertEquals(true,recruiter.canTestCandidat(candidat.getSkills()));
+        Assert.assertEquals(true,recruiter.DtoToRecruiter().canTestCandidat(candidat.DtoToCandidat().getSkills()));
     }
     @Test
     public void recruiter_could_not_be_test_candidat(){
-        Recruiter recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
-        Candidat candidat = Utils.createCandidatWithPythonSkills();
+        RecruiterDTO recruiter = Utils.createRecruiterWithJavaAndCrystalSkills();
+        CandidatDTO candidat = Utils.createCandidatWithPythonSkills();
 
-        Assert.assertEquals(false,recruiter.canTestCandidat(candidat.getSkills()));
+        Assert.assertEquals(false,recruiter.DtoToRecruiter().canTestCandidat(candidat.DtoToCandidat().getSkills()));
     }
 }

@@ -1,4 +1,4 @@
-package java.model.room;
+package model.room;
 
 public enum Equipment {
     TELEVISION,

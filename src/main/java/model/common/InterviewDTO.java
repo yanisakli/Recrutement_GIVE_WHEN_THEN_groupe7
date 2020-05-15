@@ -1,10 +1,11 @@
-package java.model.common;
+package model.common;
 
-import java.model.candidat.Candidat;
-import java.model.interview.Interview;
-import java.model.interview.Slot;
-import java.model.interview.Status;
-import java.model.recruiter.Recruiter;
+import model.candidat.Candidat;
+import model.interview.Interview;
+import model.interview.Slot;
+import model.interview.Status;
+import model.recruiter.Recruiter;
+
 import java.util.UUID;
 
 public class InterviewDTO {

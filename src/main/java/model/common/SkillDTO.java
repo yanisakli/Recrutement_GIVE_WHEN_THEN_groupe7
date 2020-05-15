@@ -1,5 +1,4 @@
-package java.model.common;
-
+package model.common;
 import model.Skill;
 
 public class SkillDTO {

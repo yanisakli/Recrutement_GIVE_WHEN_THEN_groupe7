@@ -1,9 +1,8 @@
-package java.model.interview;
+package model.interview;
 
+import model.common.SlotDTO;
 import model.interview.exception.SlotException;
 
-import java.model.common.RoomDTO;
-import java.model.common.SlotDTO;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;

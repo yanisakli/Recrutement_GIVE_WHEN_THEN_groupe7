@@ -1,6 +1,7 @@
-package java.model.common;
+package model.common;
 
-import java.model.candidat.Candidat;
+import model.candidat.Candidat;
+
 import java.util.List;
 import java.util.UUID;
 

@@ -1,6 +1,7 @@
-package java.model.room;
+package model.room;
 
-import java.model.common.RoomDTO;
+import model.common.RoomDTO;
+
 import java.time.LocalDate;
 import java.util.List;
 

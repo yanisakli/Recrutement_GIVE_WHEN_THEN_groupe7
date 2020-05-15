@@ -1,10 +1,12 @@
 package modelTest.interviewTest;
 
+import infrastructure.utils.Utils;
+import model.interview.Interview;
+import model.interview.Slot;
+import model.interview.Status;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.model.interview.Interview;
-import java.model.interview.Status;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -12,10 +14,10 @@ public class InterviewTests {
 
     @Test
     public void it_should_create_interview(){
-       Interview interview = infrastructure.utils.Utils.createInterview();
+       Interview interview = Utils.createInterview();
        Assert.assertNotNull(interview.getInterviewUuid());
+       Assert.assertNotNull(interview.getRoomUuid());
        Assert.assertEquals(LocalDate.of(2020, 06, 01),interview.getSlot().getDate());
-       Assert.assertEquals("B01",interview.getInterviewRoom().getName());
        Assert.assertEquals(LocalTime.of(17,30),interview.getSlot().getInterviewStart());
        Assert.assertEquals(LocalTime.of(18,30),interview.getSlot().getInterviewFinish());
        Assert.assertEquals(interview.getStatus(), Status.PLANIFIED);
@@ -52,11 +54,11 @@ public class InterviewTests {
         LocalTime interviewFinish = LocalTime.of(16,00);
         Slot slot = new Slot(date,interviewStart,interviewFinish);
 
-        Room room = new Room("B22",true);
-        interview.postPonedInterview(slot,room);
+        // RoomDTO roomDTO = Utils.createRoomB82();
+        interview.postPonedInterview(slot);
 
         Assert.assertEquals(date,interview.getSlot().getDate());
-        Assert.assertEquals("B22",interview.getInterviewRoom().getName());
+        Assert.assertNotNull(interview.getRoomUuid());
         Assert.assertEquals(interviewStart,interview.getSlot().getInterviewStart());
         Assert.assertEquals(interviewFinish,interview.getSlot().getInterviewFinish());
         Assert.assertEquals(interview.getStatus(), Status.POSTPONED);

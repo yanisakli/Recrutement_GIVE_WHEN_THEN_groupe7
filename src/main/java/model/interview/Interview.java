@@ -1,10 +1,10 @@
-package java.model.interview;
+package model.interview;
 
-import java.model.candidat.Candidat;
-import java.model.common.*;
+import model.candidat.Candidat;
+import model.common.*;
+import model.recruiter.Recruiter;
+import model.room.Room;
 
-import java.model.recruiter.Recruiter;
-import java.model.room.Room;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -130,7 +130,8 @@ public class Interview {
         this.setStatus(Status.CANCELED);
     }
 
-    public void postPonedInterview(Slot slot,Room room) {
+    // TODO : Rajouter modif room
+    public void postPonedInterview(Slot slot) {
         this.setSlot(slot);
         this.setStatus(Status.POSTPONED);
     }

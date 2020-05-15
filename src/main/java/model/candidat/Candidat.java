@@ -1,9 +1,9 @@
-package java.model.candidat;
+package model.candidat;
 
 import model.Skill;
+import model.common.CandidatDTO;
+import model.common.SkillDTO;
 
-import java.model.common.CandidatDTO;
-import java.model.common.SkillDTO;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;

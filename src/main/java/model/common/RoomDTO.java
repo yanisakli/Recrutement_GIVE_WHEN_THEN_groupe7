@@ -1,7 +1,7 @@
-package java.model.common;
+package model.common;
+import model.room.Equipment;
+import model.room.Room;
 
-import java.model.room.Equipment;
-import java.model.room.Room;
 import java.util.List;
 import java.util.UUID;
 

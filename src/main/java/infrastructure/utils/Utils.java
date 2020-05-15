@@ -1,10 +1,12 @@
-package utils;
+package infrastructure.utils;
 
+import infrastructure.implementation.RecruitersImplementation;
+import infrastructure.implementation.RoomsImplementation;
 import model.Skill;
+import model.common.*;
+import model.interview.Interview;
+import model.room.Equipment;
 
-import java.model.common.*;
-import java.model.interview.Interview;
-import java.model.room.Equipment;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -121,7 +123,10 @@ public class Utils {
     }
 
     public static Interview createInterview(){
-        return new Interview(createCandidatWithJavaAndCrystalSkills(), createSlotOne());
+        Interview interview = new Interview(createCandidatWithJavaAndCrystalSkills(), createSlotOne());
+        interview.plan(new RecruitersImplementation().getRecruitersByDate(date1), new RoomsImplementation().getAvailableRoom(date1));
+        interview.confirm();
+        return interview;
     }
 
 }
