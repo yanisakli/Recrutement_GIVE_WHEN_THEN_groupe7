@@ -7,30 +7,30 @@ import model.recruiter.Recruiter;
 import model.interview.Interview;
 import model.interview.Slot;
 import model.interview.Status;
+import model.common.CandidatDTO;
+import model.common.RecruiterDTO;
+import java.model.common.RoomDTO;
+import java.model.common.SlotDTO;
 
 public class InterviewDTO {
     private final UUID interviewUuid;
-    private Candidat interviewCandidat;
-    private Recruiter interviewRecruiter;
-    private Room interviewRoom;
-    private Slot slot;
+    private CandidatDTO interviewCandidat;
+    private RecruiterDTO interviewRecruiter;
+    private UUID roomUuid;
+    private SlotDTO slot;
     private Status status;
 
-    public InterviewDTO(Candidat candidat, Recruiter recruiter, Room room, Slot slot, Status status) {
+    public InterviewDTO(Candidat candidat, Recruiter recruiter, UUID roomUuid, Slot slot, Status status) {
         this.interviewUuid = UUID.randomUUID();
-        this.interviewCandidat = candidat;
-        this.interviewRecruiter = recruiter;
-        this.interviewRoom = room;
-        this.slot = slot;
+        this.interviewCandidat = candidat.candidatToDTO();
+        this.interviewRecruiter = recruiter.RecruiterToDTO();
+        this.roomUuid = roomUuid;
+        this.slot = slot.SlotToDTO();
         this.status = status;
     }
 
     public Interview DtoToInterview() {
-        return new Interview(interviewCandidat,
-                interviewRecruiter,
-                interviewRoom,
-                slot,
-                status);
+        return new Interview(interviewCandidat, slot);
     }
 
     public UUID getInterviewUuid() {
@@ -38,19 +38,19 @@ public class InterviewDTO {
     }
 
     public Candidat getInterviewCandidat() {
-        return interviewCandidat;
+        return interviewCandidat.DtoToCandidat();
     }
 
     public Recruiter getInterviewRecruiter() {
-        return interviewRecruiter;
+        return interviewRecruiter.DtoToRecruiter();
     }
 
-    public Room getInterviewRoom() {
+    /*public Room getInterviewRoom() {
         return interviewRoom;
-    }
+    }*/
 
     public Slot getSlot() {
-        return slot;
+        return slot.DtoToSlot();
     }
 
     public Status getStatus() {

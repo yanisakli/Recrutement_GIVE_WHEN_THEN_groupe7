@@ -1,5 +1,4 @@
-package use_case.InterviewTest;
-
+package java.use_case.Interview;
 
 import model.interview.Interview;
 

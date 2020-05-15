@@ -8,6 +8,7 @@ import model.common.CandidatDTO;
 import model.common.RecruiterDTO;
 
 import java.model.common.RoomDTO;
+import java.model.common.SlotDTO;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -100,12 +101,12 @@ public class Utils {
         return new RoomDTO("B22",true);
     }
 
-    public static Slot createSlot(){
-        return new Slot(date1,interviewStart,interviewFinish);
+    public static SlotDTO createSlot(){
+        return new SlotDTO(date1,interviewStart,interviewFinish);
     }
 
     public static Interview createInterview(){
-        return new Interview(createCandidatWithJavaAndCrystalSkills(),createRecruiterWithJavaAndCrystalSkills(),createRoomB01(),createSlot(), Status.PLANIFIED);
+        return new Interview(createCandidatWithJavaAndCrystalSkills(),createRecruiterWithJavaAndCrystalSkills(),createRoomB01(), createSlot(), Status.PLANIFIED);
     }
 
 }

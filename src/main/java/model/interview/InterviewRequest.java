@@ -6,14 +6,14 @@ import java.util.UUID;
 
 public class InterviewRequest{
     private final UUID candidatUuid;
-    private final UUID salleUuid;
+    private final UUID roomUuid;
     private final LocalDate date;
     private final LocalTime startInterview;
     private final LocalTime finishInterview;
 
-    public InterviewRequest(UUID candidatUuid, UUID salleUuid, LocalDate date, LocalTime startInterview, LocalTime finishInterview ) {
+    public InterviewRequest(UUID candidatUuid, UUID roomUuid, LocalDate date, LocalTime startInterview, LocalTime finishInterview ) {
         this.candidatUuid = candidatUuid;
-        this.salleUuid = salleUuid;
+        this.roomUuid = roomUuid;
         this.date = date;
         this.startInterview = startInterview;
         this.finishInterview = finishInterview;
@@ -23,8 +23,8 @@ public class InterviewRequest{
         return candidatUuid;
     }
 
-    public UUID getSalleUuid() {
-        return salleUuid;
+    public UUID getRoomUuid() {
+        return roomUuid;
     }
 
     public LocalDate getDate() {

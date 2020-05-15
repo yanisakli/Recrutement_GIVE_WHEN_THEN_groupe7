@@ -6,34 +6,90 @@ import model.room.Room;
 import model.interview.Slot;
 import model.interview.Status;
 import model.common.InterviewDTO;
+import model.common.CandidatDTO;
+import model.common.RecruiterDTO;
+import java.model.common.RoomDTO;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.model.common.SlotDTO;
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public class Interview {
-    private final UUID interviewUuid;
+    private UUID interviewUuid;
     private Candidat interviewCandidat;
     private Recruiter interviewRecruiter;
-    private Room interviewRoom;
+    private UUID roomUuid;
     private Slot slot;
     private Status status;
     
-    public Interview(Candidat candidat, Recruiter recruiter, Room room, Slot slot, Status status) {
+    public Interview(CandidatDTO candidatDTO, SlotDTO slotDTO) {
+        this.interviewCandidat = candidatDTO.DtoToCandidat();
+
+        this.slot = slotDTO.DtoToSlot();
+    }
+
+    public void confirm() {
+        setStatus(Status.PLANIFIED);
+    }
+
+    public void setRecruiter(List<RecruiterDTO> recruitersDTO) throws model.recruiter.exception.RecruiterException {
+        Optional<Recruiter> recruiterStream = recruitersDTO.stream()
+                .map(recruiterDTO -> recruiterDTO.DtoToRecruiter())
+                .filter(recruiter -> recruiter.canTestCandidat(interviewCandidat.getSkills()))
+                .findFirst();
+
+        if(!recruiterStream.isPresent()){
+            throw new model.recruiter.exception.RecruiterException("No recruiter is available");
+        }
+
+        this.interviewRecruiter = recruiterStream.get();
+    }
+
+    public void plan(List<RecruiterDTO> recruitersDTO, List<RoomDTO> roomsDTO) {
+        setRecruiter(recruitersDTO);
+        Room room = getAvailableRoom(roomsDTO, slot);
         this.interviewUuid = UUID.randomUUID();
-        this.interviewCandidat = candidat;
-        this.interviewRecruiter = recruiter;
-        this.interviewRoom = room;
-        this.slot = slot;
-        this.status = status;
+
+        setStatus(Status.PLANIFIED);
+        setRoomUuid(room.getRoomUuid());
+    }
+
+    public Room getAvailableRoom(List<RoomDTO> roomsDTO, Slot slot) throws model.room.exception.RoomException {
+        Optional<Room> roomSteam = roomsDTO.stream()
+                .map(roomDTO -> roomDTO.DtoToRoom())
+                .filter(room -> room.getFreeRoom(slot))
+                .findFirst();
+
+        if(!roomSteam.isPresent()){
+            throw new model.room.exception.RoomException("No room is available");
+        }
+
+        return roomSteam.get();
     }
 
     public InterviewDTO InterviewToDTO(){
         return new InterviewDTO(interviewCandidat,
                 interviewRecruiter,
-                interviewRoom,
+                roomUuid,
                 slot,
                 status);
+    }
+
+    public void setRoom(UUID roomUuid) {
+        setRoomUuid(roomUuid);
+    }
+
+    public void setInterviewUuid(UUID interviewUuid) {
+        this.interviewUuid = interviewUuid;
+    }
+
+    public UUID getRoomUuid() {
+        return roomUuid;
+    }
+
+    public void setRoomUuid(UUID roomUuid) {
+        this.roomUuid = roomUuid;
     }
 
     public UUID getInterviewUuid() {
@@ -54,14 +110,6 @@ public class Interview {
 
     public void setInterviewRecruiter(Recruiter interviewRecruiter) {
         this.interviewRecruiter = interviewRecruiter;
-    }
-
-    public Room getInterviewRoom() {
-        return interviewRoom;
-    }
-
-    public void setInterviewRoom(Room interviewRoom) {
-        this.interviewRoom = interviewRoom;
     }
 
     public Slot getSlot() {
