@@ -5,15 +5,8 @@ import model.interview.Interview;
 import model.interview.InterviewRequest;
 import use_case.InterviewTestInterviewTest;
 import model.interview.Status;
-import infrastructure.implementation.CandidatsImplementation;
 import infrastructure.implementation.RecruitersImplementation;
-import infrastructure.implementation.RoomsImplementation;
-import org.junit.Assert;
 import org.junit.Test;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.UUID;
 
 public class InterviewPlanificationTest {
     //TODO

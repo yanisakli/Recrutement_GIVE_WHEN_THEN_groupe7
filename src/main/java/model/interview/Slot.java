@@ -1,4 +1,4 @@
-package model.interview;
+package java.model.interview;
 
 import model.interview.exception.SlotException;
 

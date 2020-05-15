@@ -1,7 +1,9 @@
-package model.recruiter;
+package java.model.recruiter;
 
 import model.Skill;
 import model.recruiter.exception.RecruiterException;
+
+import java.model.common.RecruiterDTO;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -25,8 +27,8 @@ public class Recruiter {
         this.disponibilities = disponibilities;
     }
 
-    public model.common.RecruiterDTO RecruiterToDTO() {
-        return new model.common.RecruiterDTO(name, mail, recruiterSkills, disponibilities);
+    public RecruiterDTO RecruiterToDTO() {
+        return new RecruiterDTO(name, mail, recruiterSkills, disponibilities);
     }
 
     //TODO : elle retourne toujours false :/

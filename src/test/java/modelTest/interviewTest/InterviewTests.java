@@ -1,12 +1,10 @@
 package modelTest.interviewTest;
 
-import model.interview.Interview;
-import model.interview.Slot;
-import model.interview.Status;
-import model.room.Room;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.model.interview.Interview;
+import java.model.interview.Status;
 import java.time.LocalDate;
 import java.time.LocalTime;
 

@@ -1,24 +1,22 @@
-package model.common;
+package java.model.common;
 
-import model.candidat.Candidat;
-
-import java.model.common.SlotDTO;
+import java.model.candidat.Candidat;
 import java.util.List;
 import java.util.UUID;
 
 public class CandidatDTO {
     private final UUID candidatUuid;
     private final String name;
-    private final List<model.Skill> skills;
+    private final List<SkillDTO> skillsDTO;
 
-    public CandidatDTO(UUID candidatUuid, String name, List<model.Skill> skills ) {
+    public CandidatDTO(UUID candidatUuid, String name, List<SkillDTO> skillsDTO ) {
         this.candidatUuid = candidatUuid;
         this.name = name;
-        this.skills = skills;
+        this.skillsDTO = skillsDTO;
     }
 
     public Candidat DtoToCandidat(){
-        return new Candidat(candidatUuid, name, skills);
+        return new Candidat(candidatUuid, name, skillsDTO);
     }
 
     public UUID getCandidatUuid() {
@@ -29,7 +27,7 @@ public class CandidatDTO {
         return name;
     }
 
-    public List<model.Skill> getSkills() {
-        return skills;
+    public List<SkillDTO> getSkills() {
+        return skillsDTO;
     }
 }

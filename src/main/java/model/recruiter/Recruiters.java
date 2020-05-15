@@ -1,8 +1,9 @@
-package model.recruiter;
+package java.model.recruiter;
 
+import java.model.common.RecruiterDTO;
 import java.time.LocalDate;
 import java.util.List;
 
 public interface Recruiters {
-    List<model.common.RecruiterDTO> getRecruitersByDate(LocalDate date);
+    List<RecruiterDTO> getRecruitersByDate(LocalDate date);
 }

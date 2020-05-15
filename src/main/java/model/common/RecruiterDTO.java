@@ -1,7 +1,6 @@
-package model.common;
+package java.model.common;
 
-import model.recruiter.Recruiter;
-
+import java.model.recruiter.Recruiter;
 import java.time.LocalDate;
 import java.util.List;
 

@@ -1,10 +1,9 @@
-package model.candidat;
+package java.model.candidat;
 
 import model.Skill;
-import model.common.CandidatDTO;
 
+import java.model.common.CandidatDTO;
 import java.model.common.SkillDTO;
-import java.model.common.SlotDTO;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -21,7 +20,7 @@ public class Candidat {
     }
 
     public CandidatDTO candidatToDTO(){
-        return new CandidatDTO(candidatUuid, name, skills);
+        return new CandidatDTO(candidatUuid, name, skills.stream().map(skill -> skill.skillToDTO()).collect(Collectors.toList()));
     }
     public UUID getCandidatUuid() {
         return candidatUuid;

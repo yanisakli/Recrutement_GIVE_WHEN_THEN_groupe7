@@ -1,7 +1,6 @@
 package java.model.common;
 
-import model.interview.Slot;
-
+import java.model.interview.Slot;
 import java.time.LocalDate;
 import java.time.LocalTime;
 

@@ -1,4 +1,4 @@
-package model.room;
+package java.model.room;
 
 import java.model.common.RoomDTO;
 import java.time.LocalDate;

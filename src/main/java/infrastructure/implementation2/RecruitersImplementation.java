@@ -1,7 +1,5 @@
-package infrastructure.implementation;
+package java.infrastructure.implementation;
 
-import infrastructure.utils.Utils;
-import model.recruiter.Recruiters;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

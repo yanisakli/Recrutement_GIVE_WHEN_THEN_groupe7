@@ -1,14 +1,10 @@
-package infrastructure.utils;
+package utils;
 
 import model.Skill;
-import model.interview.Interview;
-import model.interview.Slot;
-import model.interview.Status;
-import model.common.CandidatDTO;
-import model.common.RecruiterDTO;
 
-import java.model.common.RoomDTO;
-import java.model.common.SlotDTO;
+import java.model.common.*;
+import java.model.interview.Interview;
+import java.model.room.Equipment;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -75,38 +71,57 @@ public class Utils {
     }
 
     public static CandidatDTO createCandidatWithJavaAndCrystalSkills(){
-        List<Skill> skillsCandidat = new ArrayList<>();
-        Skill skillsCandidatOne = new Skill("java");
-        Skill skillsCandidatTwo = new Skill("crystal");
+        List<SkillDTO> skillsCandidat = new ArrayList<>();
+        SkillDTO skillsCandidatOne = new SkillDTO("java");
+        SkillDTO skillsCandidatTwo = new SkillDTO("crystal");
         skillsCandidat.add(skillsCandidatOne);
         skillsCandidat.add(skillsCandidatTwo);
 
         return new CandidatDTO(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
     }
     public static CandidatDTO createCandidatWithPythonSkills(){
-        List<Skill> skillsCandidat = new ArrayList<>();
-        Skill skillsCandidatOne = new Skill("python");
+        List<SkillDTO> skillsCandidat = new ArrayList<>();
+        SkillDTO skillsCandidatOne = new SkillDTO("python");
         skillsCandidat.add(skillsCandidatOne);
 
         return new CandidatDTO(UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),"Yanis",skillsCandidat);
     }
 
     public static RoomDTO createRoomB01(){
-        return new RoomDTO("B01",true);
-    }
-    public static RoomDTO createRoomB21(){
-        return new RoomDTO("B21",true);
-    }
-    public static RoomDTO createRoomB22(){
-        return new RoomDTO("B22",true);
+        List<SlotDTO> slotDTOList = new ArrayList<>();
+        List<Equipment> equipmentList = new ArrayList<>();
+        equipmentList.add(Equipment.PHONE);
+        equipmentList.add(Equipment.TABLE);
+        slotDTOList.add(createSlotOne());
+        slotDTOList.add(createSlotTwo());
+        return new RoomDTO("B01",slotDTOList, UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"), 3, equipmentList);
     }
 
-    public static SlotDTO createSlot(){
+    public static RoomDTO createRoomB82(){
+        List<SlotDTO> slotDTOList = new ArrayList<>();
+        List<Equipment> equipmentList = new ArrayList<>();
+        equipmentList.add(Equipment.COMPUTER);
+        slotDTOList.add(createSlotTwo());
+        return new RoomDTO("B82",slotDTOList, UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"), 3, equipmentList);
+    }
+
+    public static RoomDTO createRoomB22(){
+        List<SlotDTO> slotDTOList = new ArrayList<>();
+        List<Equipment> equipmentList = new ArrayList<>();
+        equipmentList.add(Equipment.PHONE);
+        slotDTOList.add(createSlotOne());
+        return new RoomDTO("B22",slotDTOList, UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"), 3, equipmentList);
+    }
+
+    public static SlotDTO createSlotOne(){
         return new SlotDTO(date1,interviewStart,interviewFinish);
+    }
+    public static SlotDTO createSlotTwo(){
+        return new SlotDTO(date2,interviewStart,interviewFinish);
     }
 
     public static Interview createInterview(){
-        return new Interview(createCandidatWithJavaAndCrystalSkills(),createRecruiterWithJavaAndCrystalSkills(),createRoomB01(), createSlot(), Status.PLANIFIED);
+        return new Interview(createCandidatWithJavaAndCrystalSkills(), createSlotOne());
     }
 
 }
