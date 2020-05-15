@@ -33,13 +33,12 @@ public class InterviewPlanification {
     // WHEN : Je planifie un entretien pour le candidat pour demain
     // THEN : Un entretien est planifie pour le candidat avec un recruteur demain
 
-    public void createInterview(InterviewRequest request) throws RecruiterException, RoomException {
+    public Interview createInterview(InterviewRequest request) throws RecruiterException, RoomException {
         CandidatDTO candidatDTO = candidats.getCandidatByUuid(request.getCandidatUuid());
 
         List<RecruiterDTO> listRecruiterDTO = recruiters.getRecruitersByDate(request.getDate());
         List<RoomDTO> listRoomDTO = rooms.getAvailableRoom(request.getDate());
 
-        // Mettre dans créneaux
         LocalDate date = request.getDate();
         LocalTime startInterview = request.getStartInterview();
         LocalTime finishInterview = request.getFinishInterview();
@@ -48,7 +47,9 @@ public class InterviewPlanification {
 
         Interview interview = new Interview(candidatDTO, slot.SlotToDTO());
         interview.plan(listRecruiterDTO, listRoomDTO);
-        interview.confirm();
+        interview.planified();
+
+        return interview;
     }
     
 }

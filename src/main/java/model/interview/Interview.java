@@ -23,7 +23,7 @@ public class Interview {
         this.slot = slotDTO.DtoToSlot();
     }
 
-    public void confirm() {
+    public void planified() {
         setStatus(Status.PLANIFIED);
     }
 

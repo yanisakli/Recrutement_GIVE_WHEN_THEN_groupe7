@@ -1,11 +1,14 @@
 package infrastructure.utils;
 
+import infrastructure.implementation.CandidatsImplementation;
 import infrastructure.implementation.RecruitersImplementation;
 import infrastructure.implementation.RoomsImplementation;
 import model.Skill;
 import model.common.*;
 import model.interview.Interview;
+import model.interview.InterviewRequest;
 import model.room.Equipment;
+import use_case.Interview.InterviewPlanification;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -125,8 +128,22 @@ public class Utils {
     public static Interview createInterview(){
         Interview interview = new Interview(createCandidatWithJavaAndCrystalSkills(), createSlotOne());
         interview.plan(new RecruitersImplementation().getRecruitersByDate(date1), new RoomsImplementation().getAvailableRoom(date1));
-        interview.confirm();
+        interview.planified();
         return interview;
+    }
+
+    public static InterviewPlanification createInterviewPlanification() {
+        return new InterviewPlanification(new CandidatsImplementation(), new RecruitersImplementation(),new RoomsImplementation());
+    }
+
+    public static InterviewRequest createInterviewRequest() {
+        return new InterviewRequest(
+                UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),
+                UUID.fromString("d2f394c6-1abd-4818-bf08-c34651d62e0e"),
+                Utils.date1,
+                Utils.interviewStart,
+                Utils.interviewFinish
+        );
     }
 
 }

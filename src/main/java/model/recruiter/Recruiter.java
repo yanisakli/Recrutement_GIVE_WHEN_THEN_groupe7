@@ -33,8 +33,8 @@ public class Recruiter {
 
     //TODO : elle retourne toujours false :/
     public boolean canTestCandidat(List<Skill> skills){
-        return true;
-        // return recruiterSkills.containsAll(skills);
+        boolean result = recruiterSkills.containsAll(skills);
+        return result;
     }
 
     public boolean isAvailable(LocalDate date){

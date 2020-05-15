@@ -1,10 +1,8 @@
 package modelTest.recruiterTest;
 
 import infrastructure.utils.Utils;
-import model.candidat.Candidat;
 import model.common.CandidatDTO;
 import model.common.RecruiterDTO;
-import model.recruiter.Recruiter;
 import model.recruiter.exception.RecruiterException;
 import org.junit.Assert;
 import org.junit.Test;
