@@ -1,14 +1,13 @@
-package modelTest.recruiterTest;
+package infrastructure.implementation;
 
+import infrastructure.utils.Utils;
 import model.recruiter.Recruiter;
 import model.recruiter.Recruiters;
-import utils.Utils;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecruitersTests implements Recruiters {
+public class RecruitersImplementation implements Recruiters {
     @Override
     public List<Recruiter> getRecruitersByDate(LocalDate date) {
         List<Recruiter> recruiters = new ArrayList<>();

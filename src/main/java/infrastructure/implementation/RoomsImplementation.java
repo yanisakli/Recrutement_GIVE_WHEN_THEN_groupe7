@@ -1,15 +1,13 @@
-package modelTest.roomTest;
+package infrastructure.implementation;
 
-import model.recruiter.Recruiter;
+import infrastructure.utils.Utils;
 import model.room.Room;
 import model.room.Rooms;
-import utils.Utils;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RoomsTests implements Rooms {
+public class RoomsImplementation implements Rooms {
     @Override
     public List<Room> getAvailableRoom(LocalDate date) {
         List<Room> rooms = new ArrayList<>();

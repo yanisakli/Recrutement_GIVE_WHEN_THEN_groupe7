@@ -1,8 +1,7 @@
-package utils;
+package infrastructure.utils;
 
 import model.Skill;
 import model.candidat.Candidat;
-import model.candidat.Candidats;
 import model.interview.Interview;
 import model.interview.Slot;
 import model.recruiter.Recruiter;

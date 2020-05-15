@@ -3,9 +3,9 @@ package use_case.Interview;
 import model.interview.Interview;
 import model.interview.InterviewRequest;
 import model.interview.Status;
-import modelTest.candidatTest.CandidatsTests;
-import modelTest.recruiterTest.RecruitersTests;
-import modelTest.roomTest.RoomsTests;
+import infrastructure.implementation.CandidatsImplementation;
+import infrastructure.implementation.RecruitersImplementation;
+import infrastructure.implementation.RoomsImplementation;
 import org.junit.Assert;
 import org.junit.Test;
 import utils.Utils;
@@ -26,7 +26,7 @@ public class InterviewPlanificationTest {
                 Utils.interviewFinish
         );
 
-        InterviewPlanification planificationEntretien = new InterviewPlanification(new CandidatsTests(), new RecruitersTests(),new RoomsTests());
+        InterviewPlanification planificationEntretien = new InterviewPlanification(new CandidatsImplementation(), new RecruitersImplementation(),new RoomsImplementation());
         Interview interview = planificationEntretien.createInterview(interviewRequest);
 
         Assert.assertNotNull(interview.getInterviewUuid());
